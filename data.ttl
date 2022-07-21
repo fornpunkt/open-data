@@ -18,7 +18,7 @@
   dct:title "FornPunkt open data catalog"@en;
   dct:title "FornPunkts öppna data katalog"@sv;
   dct:description "Metakatalog över FornPunks öppna data"@sv ;
-  dct:language "sv" ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
   dcat:contactPoint <mailto:hej@fornsok.se> ;
   dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
   dct:publisher [

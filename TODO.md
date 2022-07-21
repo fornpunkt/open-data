@@ -2,7 +2,6 @@ Todos:
  - add a repository license (data.ttl is CC0)
  - add sub/doc pages
  - review/finish distribution documentation
- - review use of dct:language in DCAT 3
  - move distribution URIs to `/datasets#*`
 
 External todos:
