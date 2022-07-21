@@ -1,0 +1,30 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX cnt: <http://www.w3.org/2011/content#>
+
+SELECT
+  ?dataset
+  ?title
+  ?access
+  ?description
+  ?standard
+  ?standard_title
+  ?documentation_fulltext
+  (REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", "") AS ?slug)
+WHERE {
+  ?dataset a  dcat:Distribution;
+           dct:title ?title ;
+           dct:description ?description ;
+           dct:accessRights ?access ;
+           dcat:landingPage ?landing_page ;
+           schema:subjectOf ?documentation .
+
+  ?documentation cnt:chars ?documentation_fulltext .
+
+  OPTIONAL {
+    ?dataset dct:conformsTo ?standard .
+    ?standard dct:title ?standard_title .
+  }
+}
+ORDER BY ?title

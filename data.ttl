@@ -112,8 +112,28 @@
   dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/observationstyper) eller per användare(lämningar).</p>
+
+    <h2>Hämtning per resurs</h2>
+
+    <p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code></code> eller lägga till suffixet <code>.jsonld</code>.</p>
+
+    <code>curl</code>
+
+    <code>curl</code>
+
+    <code>curl https://fornpunkt.se/tagg/fossil-akermark.jsonld</code>
+
+    <p>Undantaget är observationstyper där resursen alltid svarar med JSON-LD, det är dock rekomenderat att man sätter <code>Accept</code>-headern till <code></code>.</p>
+    <code>curl https://fornpunkt.se/observationstyper</code>
+
+    <h2>Hämtning per användare</h2>
+
+    <p>För att alla lämningar en användare registrerat som JSON-LD behöver man av användaren få en åtkomstnyckel med läsbehörighet. Har man en sådan nyckel kan man hämta alla registeringar på följande vis.</p>
+
+    <code>curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
+
+    <p>Notera att detta kan resultera i att många tusen lämningar hämtas samtidigt och därför bör man inte göra detta med hög frekvens.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:feature <http://www.w3.org/ns/formats/JSON-LD>;
@@ -131,8 +151,11 @@
   dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg. Flödet innehåller en lämnings beskrivning, titel, registrerare och dess URI.</p>
+
+    <p>En taggs RSS-flöde hittas genom att lägga till suffixet på en taggs URI/URL.</p>
+
+    <code>https://fornpunkt.se/tagg/fossil-akermark.rss</code>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/application/application/rss+xml> ;
@@ -147,8 +170,22 @@
   dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Man kan hämta lämningar som GeoJSON för enskilda resurser, för lämningar inom ett geografiskt område och per användare.
+
+    <p>För enenskild lämning lägg till suffixet <code>.geojson</code> till lämningens URI.</p>
+
+    <code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code>
+
+    <p>För alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer eller nerladdningstjänsten.</p>
+
+    <code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code>
+
+
+    <p>För att alla lämningar en användare registrerat som GeoJSON behöver man av användaren få en åtkomstnyckel med läsbehörighet. Har man en sådan nyckel kan man hämta alla registeringar på följande vis.</p>
+
+    <code>curl curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
+
+    <p>Notera att detta kan resultera i att många tusen lämningar hämtas samtidigt och därför bör man inte göra detta med hög frekvens.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json+geo> ;
@@ -162,8 +199,10 @@
   dct:description "WMS tjänst för data i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>FornPunkts WMS-tjänst innehåller information om lämningar registrerade i FornPunkt och är avsedd att i första hand konsumeras av GIS-vektyg.</p>
+
+    <p>FornPunkts WMS-tjänst uppdateras en gång per dygn och det är därför starkt rekomenderat att man i första hand använder sig av ett alternativt API.</p>""" ;
+
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-wms> ;
@@ -177,8 +216,16 @@
   dct:description "Nerladdning av all FornPunkt data som JSON-LD."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Detta är det enklaste viset att få all FornPunkts data. Datamängden innehåller en serie JSON-LD filer för:</p>
+
+    <ul>
+      <li>Lämningar (Schema.org)</li>
+      <li>Taggar (Schema.org)</li>
+      <li>Observationstyper (SKOS)</li>
+      <li>Berikningar (Web Annotations)</li>
+    </ul>
+
+    <p>Innehållet uppdateras en gång per vecka.""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
@@ -192,8 +239,9 @@
   dct:description "Följ ändringar i FornPunkt med IndexNow."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Med FornPunkts IndexNow API klienter få notifikatoner om nya sidor och resurser på FornPunkt.se.</p>
+    
+    <p>FornPunkts IndexNow API skickar alltid en URL i taget med <code>GET</code>-frågor och kan ibland avstå att skicka nya resurser vid till exempel massimporter.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-indexnow> ;
@@ -207,8 +255,9 @@
   dct:description "Index över information i FornPunkt som XML och text sidkartor."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller XML.</p>
+
+    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
@@ -222,8 +271,7 @@
   dct:description "Linked data fragments tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>FornPunkts Linked data fragments tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och kan användas för att snabbt hämta stora mängder data om resurser som matchar specifika krav. Så som om en lämning är resultatet av en fältobservation.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
@@ -240,8 +288,9 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering.</p>
+    
+    <p>Med SPARQL tjänsten kan man ställa komplexa frågor om informationen. Det finns både ett SPARQL-bibliotek med frågor skapade på förhand och ett visualiseringsverktyg som är öppen källkod och fritt att använda.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
@@ -258,8 +307,9 @@
   dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata(Schema.org). Det är rekomenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
+    
+    <p>Vi strävar efter att exponera så mycket information som möjligt som Microdata men det är inte alltid vi kan exponera all information. Är detta viktigt för dig bör du överväga att istället konsumera JSON-LD.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
@@ -276,8 +326,21 @@
   dct:description "API för att registrera information i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Med FornPunkts registerings API kan du registera nya lämningar, taggar och berikningar. Det är än inte möjligt att redigera existerande information med tjänsten.</p>
+
+    <p>För att registerar information behöver du eller din användare ett konto och en åtkomstnyckel med skriv behörighet. För att få en sådan nyckel kan du kontakta oss genom <a href="mailto:hej@fornpunk.se">mailto:hej@fornpunk.se</a>.</p>
+
+    <h2>Registering av lämningar</h2>
+
+    <code>curl</code>
+
+    <p>Anger ni en tagg som inte finns skapas den automatiskt.</p>
+
+    <h2>Registering av berikningar</h2>
+
+    <p>Idag är det inte möjligt att registrera berikningar som inte är kommentarer.</p>
+
+    <code>curl</code>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;

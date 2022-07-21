@@ -1,0 +1,32 @@
+{{ template "base" . }}
+
+{{ define "title" }}{{ .title }}{{ end }}
+
+{{ define "content" }}
+<div class="container-lg py-5">
+  {{ if .standard }}
+  <div class="float-end">
+    <a class="btn btn-primary btn-sm mt-2" href="{{ .standard }}">{{ .standard_title }}</a>
+  </div>
+  {{ end }}
+  <h1>{{ .title }}</h1>
+  {{ safe_html .documentation_fulltext }}
+</div>
+
+{{ if eq .access (uri "http://publications.europa.eu/resource/authority/access-right/RESTRICTED") }}
+<div class="container-lg">
+  <div class="card mb-5 text-bg-primary">
+    <div class="card-body">
+        <h2 class="card-title h5">Begränsad tillgänglighet</h2>
+        <p class="card-text">Åtkomsten till denna tjänst är begränsad. Vill du ha åtkomst får du gärna kontakta oss. Begränsningen kan bero på att den är experimentell, dyr i drift, kan massredigera information eller primärt tillgängliggör information ifrån en tredjepart.</p>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
+  <div class="text-white container">
+    <p class="m-0">Vi jobbar ständigt på att utveckla existernade tjänser och nya tjänster för att kulturarvsdata ska bli så tillgängligt som möjligt. Vi planerar bland annat stöd för GeoRSS, ActivityPub samt för RSS-földen på användarnivå. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
+  </div>
+</div>
+{{ end }}

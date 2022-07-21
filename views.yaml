@@ -2,3 +2,6 @@ views:
   - output: "index.html"
     query: "index.rq"
     template: "index.html"
+  - output: "{{slug}}/index.html"
+    query: "services.rq"
+    template: "service.html"
