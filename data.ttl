@@ -1,0 +1,421 @@
+@prefix dcat:      <http://www.w3.org/ns/dcat#> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix void:      <http://rdfs.org/ns/void#> .
+@prefix vcard:     <http://www.w3.org/2006/vcard/ns#> .
+@prefix cnt:       <http://www.w3.org/2011/content#> .
+@prefix schema:    <http://schema.org/> .
+
+@prefix :          <https://fornpunkt.se/datasets#> .
+
+:VoIDDescription a void:DatasetDescription ;
+    dct:title "VoID description for the FornPunkt Datasets"@en ;
+    dct:title "VoID beskrivning för FornPunks dataset"@sv ;
+    foaf:primaryTopic <https://fornpunkt.se/data/fornpunkt-json-ld-api>, <https://fornpunkt.se/data/fornpunkt-ldf>, <https://fornpunkt.se/data/fornpunkt-sparql>, <https://fornpunkt.se/data/microdata> .
+
+:Catalog a dcat:Catalog ;
+  dct:spatial <http://sws.geonames.org/2661886> ;
+  dct:title "FornPunkt open data catalog"@en;
+  dct:title "FornPunkts öppna data katalog"@sv;
+  dct:description "Metakatalog över FornPunks öppna data"@sv ;
+  dct:language "sv" ;
+  dcat:contactPoint <mailto:hej@fornsok.se> ;
+  dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:publisher [
+          a foaf:Agent ;
+          foaf:name "FornPunkt" ;
+          foaf:homepage <https://fornpunkt.se/> ;
+          vcard:hasEmail <mailto:hej@fornpunkt.se> ;
+  ] ;
+  dcat:dataset [
+    a dcat:Dataset ;
+    dct:title "FornPunkt"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-rss> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-nerladdning> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-wms> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-indexnow> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-ldf> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-sparql> ;
+    dcat:distribution <https://fornpunkt.se/data/microdata> ;
+    dcat:distribution <https://fornpunkt.se/data/fornpunkt-registrering> ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Kulturmiljöregistret"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/kmr-text-korrigering> ;
+    dcat:distribution <https://fornpunkt.se/data/microdata> ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Harmonisierad lämningsdata"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/harmonisierad-nerladdning> ;
+    dcat:distribution <https://fornpunkt.se/data/microdata> ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Besöksmål"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/besoksmal> ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Identifieringsindex"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/identifieringsindex> ;
+    dcat:distribution <https://fornpunkt.se/data/entity-reconciliation> ;
+  ],
+  [
+    a dcat:Dataset ; #TODO no distributions
+    dct:title "Bildindex"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/bildindex> ;
+  ],
+  [
+    a dcat:Dataset ; #TODO no distributions
+    dct:title "Kartindex"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/kartindex> ;
+  ],
+  [
+    a dcat:Dataset ; #TODO no distributions
+    dct:title "Statens historiska museer: samlingar"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/shm-samlingar> ;
+  ],
+  [
+    a dcat:Dataset ; #TODO no distributions
+    dct:title "Tjänste och datakatalog ifrån FornPunkt"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution <https://fornpunkt.se/data/datakatalog> ;
+  ] .
+
+
+<https://fornpunkt.se/data/fornpunkt-json-ld-api>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt JSON-LD API"@sv ;
+  dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:feature <http://www.w3.org/ns/formats/JSON-LD>;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-json-ld-api> .
+
+<https://fornpunkt.se/data/fornpunkt-rss>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt RSS flöde"@sv ;
+  dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/application/application/rss+xml> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-rss> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss> ;
+  dct:conformsTo <https://www.rssboard.org/rss-specification> .
+
+<https://fornpunkt.se/data/fornpunkt-geojson-api>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt GeoJSON API"@sv ;
+  dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json+geo> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api> .
+
+<https://fornpunkt.se/data/fornpunkt-wms>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt WMS"@sv ;
+  dct:description "WMS tjänst för data i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-wms> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-wms> ;
+  dct:conformsTo <https://www.ogc.org/standards/wms> .
+
+<https://fornpunkt.se/data/fornpunkt-nerladdning>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "FornPunkt Nerladdning (Kommer snart)"@sv ;
+  dct:description "Nerladdning av all FornPunkt data som JSON-LD."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-nerladdning> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-nerladdning> .
+
+<https://fornpunkt.se/data/fornpunkt-indexnow>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt IndexNow"@sv ;
+  dct:description "Följ ändringar i FornPunkt med IndexNow."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-indexnow> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-indexnow> ;
+  dct:conformsTo <https://www.indexnow.org/> .
+
+<https://fornpunkt.se/data/fornpunkt-sitemaps>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Sitemaps"@sv ;
+  dct:description "Index över information i FornPunkt som XML och text sidkartor."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
+  dct:conformsTo <https://www.sitemaps.org/> .
+
+<https://fornpunkt.se/data/fornpunkt-ldf>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Linked data fragments"@sv ;
+  dct:description "Linked data fragments tjänst för FornPunkts data."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-ldf> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-ldf> ;
+  dct:conformsTo <https://linkeddatafragments.org/> .
+
+<https://fornpunkt.se/data/fornpunkt-sparql>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt SPARQL"@sv ;
+  dct:description "SPARQL tjänst för FornPunkts data."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql> ;
+  dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> .
+
+<https://fornpunkt.se/data/microdata>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Microdata"@sv ;
+  dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/microdata> ;
+  dcat:accessURL <https://fornpunkt.se/data/microdata> ;
+  dct:conformsTo <https://html.spec.whatwg.org/multipage/microdata.html> .
+
+<https://fornpunkt.se/data/fornpunkt-registrering>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Registerings API (kommer snart)"@sv ;
+  dct:description "API för att registrera information i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering> .
+
+<https://fornpunkt.se/data/harmonisierad-nerladdning>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "Harmonisierad lämningsdata nerladdning"@sv ;
+  dct:description "Harmonisierad lämningsdata ifrån Riksantikvarieämbetet, Skogsstyrelsen, FornPunkt och Naturvårdsverket."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/harmonisierad-nerladdning> ;
+  dcat:accessURL <https://fornpunkt.se/data/harmonisierad-nerladdning> .
+
+<https://fornpunkt.se/data/kmr-text-korrigering>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "KMR Text Korrigering"@sv ;
+  dct:description "Tjänst för att korrigera beskrivningar ifrån Riksantikvarieämbetets kulturmiljöregister."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/kmr-text-korrigering> ;
+  dcat:accessURL <https://fornpunkt.se/data/kmr-text-korrigering> .
+
+<https://fornpunkt.se/data/besoksmal>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "Besöksmål"@sv ;
+  dct:description "Besöksmål för Wiki Loves Monuments som JSON-LD."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/besoksmal> ;
+  dcat:accessURL <https://fornpunkt.se/data/besoksmal> .
+
+<https://fornpunkt.se/data/identifieringsindex>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "KMR identifieringsindex"@sv ;
+  dct:description "Index och mappning i mellan olika existerande och historiska identifierare som används för att ange en KMR lämning."@sv ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/text/tab-separated-values> ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/identifieringsindex> ;
+  dcat:accessURL <https://fornpunkt.se/data/identifieringsindex> .
+
+<https://fornpunkt.se/data/entity-reconciliation>
+  a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "KMR entity reconciliation"@sv ;
+  dct:description "Entity reconciliation API för lämningar i Kulturmiljöregistret."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """
+    """ ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/entity-reconciliation> ;
+  dcat:accessURL <https://fornpunkt.se/data/entity-reconciliation> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.1/> .
+
+
+<https://www.w3.org/ns/dcat#>
+  a dct:Standard ;
+  dct:title "DCAT"@sv .
+
+<https://schema.org/>
+  a dct:Standard ;
+  dct:title "Schema.org"@sv .
+
+<https://www.sitemaps.org/>
+  a dct:Standard ;
+  dct:title "Sitemaps"@sv .
+
+<https://www.rssboard.org/rss-specification>
+  a dct:Standard ;
+  dct:title "RSS"@sv .
+
+<https://www.w3.org/TR/sparql11-protocol/>
+  a dct:Standard ;
+  dct:title "SPARQL"@sv .
+
+<https://linkeddatafragments.org/>
+  a dct:Standard ;
+  dct:title "Linked data fragments"@sv .
+
+<https://html.spec.whatwg.org/multipage/microdata.html>
+  a dct:Standard ;
+  dct:title "Microdata"@sv .
+
+<https://reconciliation-api.github.io/specs/0.1/>
+  a dct:Standard ;
+  dct:title "Entity reconciliation API"@en .
+
+<https://www.indexnow.org/>
+  a dct:Standard ;
+  dct:title "IndexNow"@sv .
+
+<https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>
+  a dct:Standard ;
+  dct:title "TMS"@sv .
+
+<https://www.ogc.org/standards/wms>
+  a dct:Standard ;
+  dct:title "WMS"@sv .
+
+<https://www.iana.org/assignments/media-types/text/tab-separated-values>
+  a dct:Format ;
+  dct:title "TSV"@sv .
+
+<https://www.iana.org/assignments/media-types/application/json>
+  a dct:Format ;
+  dct:title "JSON"@sv .
+
+<https://www.iana.org/assignments/media-types/application/ld+json>
+  a dct:Format ;
+  dct:title "JSON-LD"@sv .
+
+<https://www.iana.org/assignments/media-types/application/json+geo>
+  a dct:Format ;
+  dct:title "GeoJSON"@sv .

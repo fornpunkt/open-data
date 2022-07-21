@@ -1,0 +1,2 @@
+sparql_client:
+  endpoint: "http://127.0.0.1:3030/dataportal"
