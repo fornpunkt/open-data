@@ -387,8 +387,8 @@
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-  dcat:landingPage <https://fornpunkt.se/data/besoksmal> ;
-  dcat:accessURL <https://fornpunkt.se/data/besoksmal> .
+  dcat:landingPage <https://fornpunkt.se/data/wlm-besoksmal> ;
+  dcat:accessURL <https://fornpunkt.se/data/wlm-besoksmal> .
 
 :identifieringsindex a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
@@ -437,7 +437,7 @@
   dct:description "Bildindex är ett API för att hämta metadata om bilder på Kulturlämningar i Kulturmiljöregistert eller FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Bildindex är ett API för att hämta metadata om bilder på Kulturlämningar i Kulturmiljöregistert eller FornPunkt.</p>
+    cnt:chars """<p>Bildindex är ett API för att hämta metadata om bilder på kulturlämningar i Kulturmiljöregistert eller FornPunkt.</p>
 
     <p>Datamängden bygger primärt på data ifrån FornPunkt, Wiki Loves Monuments, K-samsök/museer samt Riksantikvarieämbetets databas Kulturmiljöbild. Databasen innehåller över metadata om över 50 000 bilder.</p>""" ;
   ] ;
