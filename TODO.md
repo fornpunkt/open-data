@@ -7,7 +7,6 @@ Todos:
 External todos:
 
  - Setup `.well-known/void` redirect
- - migrate fornpunkt.se to Bootstrap 5.2
 
 Post launch todos:
  - migrate inline foaf:Agent to new Agent vocabulary
