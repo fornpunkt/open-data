@@ -32,76 +32,75 @@
     dct:title "FornPunkt"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-rss> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-nerladdning> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-wms> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-indexnow> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-ldf> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-sparql> ;
-    dcat:distribution <https://fornpunkt.se/data/microdata> ;
-    dcat:distribution <https://fornpunkt.se/data/fornpunkt-registrering> ;
+    dcat:distribution :fornpunkt-json-ld-api ;
+    dcat:distribution :fornpunkt-rss ;
+    dcat:distribution :fornpunkt-geojson-api ;
+    dcat:distribution :fornpunkt-nerladdning ;
+    dcat:distribution :fornpunkt-wms ;
+    dcat:distribution :fornpunkt-indexnow ;
+    dcat:distribution :fornpunkt-sitemaps ;
+    dcat:distribution :fornpunkt-ldf ;
+    dcat:distribution :fornpunkt-sparql ;
+    dcat:distribution :microdata ;
+    dcat:distribution :fornpunkt-registrering ;
   ],
   [
     a dcat:Dataset ;
     dct:title "Kulturmiljöregistret"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/kmr-text-korrigering> ;
-    dcat:distribution <https://fornpunkt.se/data/microdata> ;
+    dcat:distribution :kmr-text-korrigering ;
+    dcat:distribution :microdata ;
   ],
   [
     a dcat:Dataset ;
     dct:title "Harmonisierad lämningsdata"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/harmonisierad-nerladdning> ;
-    dcat:distribution <https://fornpunkt.se/data/microdata> ;
+    dcat:distribution :harmonisierad-nerladdning ;
   ],
   [
     a dcat:Dataset ;
-    dct:title "Besöksmål"@sv ;
+    dct:title "Wiki Loves Monuments Besöksmål"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/besoksmal> ;
+    dcat:distribution :wlm-besoksmal ;
   ],
   [
     a dcat:Dataset ;
     dct:title "Identifieringsindex"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/identifieringsindex> ;
-    dcat:distribution <https://fornpunkt.se/data/entity-reconciliation> ;
+    dcat:distribution :identifieringsindex ;
+    dcat:distribution :entity-reconciliation ;
   ],
   [
-    a dcat:Dataset ; #TODO no distributions
+    a dcat:Dataset ;
     dct:title "Bildindex"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/bildindex> ;
+    dcat:distribution :bildindex ;
   ],
   [
-    a dcat:Dataset ; #TODO no distributions
+    a dcat:Dataset ;
     dct:title "Kartindex"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/kartindex> ;
+    dcat:distribution :kartindex ;
   ],
   [
-    a dcat:Dataset ; #TODO no distributions
+    a dcat:Dataset ;
     dct:title "Statens historiska museer: samlingar"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/shm-samlingar> ;
+    dcat:distribution :shm-samlingar ;
   ],
   [
-    a dcat:Dataset ; #TODO no distributions
+    a dcat:Dataset ;
     dct:title "Tjänste och datakatalog ifrån FornPunkt"@sv ;
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
-    dcat:distribution <https://fornpunkt.se/data/datakatalog> ;
+    dcat:distribution :datakatalog ;
   ] .
 
 
@@ -342,8 +341,9 @@
   dct:description "Harmonisierad lämningsdata ifrån Riksantikvarieämbetet, Skogsstyrelsen, FornPunkt och Naturvårdsverket."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Harmonisierad lämningsdata nerladdning kombinerar data ifrån Riksantikvarieämbetet, Skogsstyrelsen*, FornPunkt och Naturvårdsverket i samma format och kordinatsystem. Datamänden är framtagen för skogsbruk och dataanalys.</p>
+
+    <p>*Endast delar av Skog och historia där Skogsstyrelsen ej kan anses ha någon upphovsrätt tillgängliggörs idag.</p>""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
@@ -352,26 +352,38 @@
 
 :kmr-text-korrigering a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
-  dct:title "KMR Text Korrigering"@sv ;
+  dct:title "KMR text korrigering"@sv ;
   dct:description "Tjänst för att korrigera beskrivningar ifrån Riksantikvarieämbetets kulturmiljöregister."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """KMR text korrigering är en tjänst som given ett UUID för en lämning ur Riksantikvarieämbetets kulturmiljöregister automatiskt rättar vanliga fel som uppstått vid digitalisering.</p>
+
+    <p>Vanliga fel som tjänsten korrigerar är:</p>
+
+    <ul>
+      <li>Ihopskrivna ord (tregrönstensyxor -> tre grönstensyxor)</li>
+      <li>Avsaknaden blanksteg i mellan medningar. (grönstensyxor.Ungefärlig -> grönstensyxor. Ungefärlig)</li>
+      <li>Avsaknad av radbrytning i tillexempel listor.</li>
+    </ul>
+
+    <p>Tjänsten korrigerar inte alla fel och avser inte att rätta fel som inte uppstått under digitalisering(så som stavfel). Tjänsten skapades för att göra texterna i Kulturmiljöregistret lättare att läsa.</p>""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/kmr-text-korrigering> ;
   dcat:accessURL <https://fornpunkt.se/data/kmr-text-korrigering> .
 
-:besoksmal a dcat:Distribution ;
+:wlm-besoksmal a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "Besöksmål"@sv ;
   dct:description "Besöksmål för Wiki Loves Monuments som JSON-LD."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """<p>Besöksmål är dataset bestående av arbetslivsmuseum, kulturlämningar och byggnadsminnen kurerade tillsammans till besöksmål.</p>
+
+    <p>Dataset utvecklas kontinueligt för att användas i tävlingen Wiki Loves Monuments och inkluderar täcker idag bara ett fåtal svenska kommuner.</p>
+
+    <p>Informationen är modellerad enligt Schema.org och använder sig av Wikidata och K-samsök som auktoriteter.</p>""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
@@ -385,7 +397,19 @@
   dcat:mediaType <https://www.iana.org/assignments/media-types/text/tab-separated-values> ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
+    cnt:chars """<p>KMR identifieringsindex är en tabell med mappningar mellan olika existerande och historiska kulturlämningsidentifierare.</p>
+    <p>Tabellen innehåller följande identifierare:</p>
+    <ul>
+      <li>UUID (Kulturmiljöregistret)</li>
+      <li>Lämmningsnummer</li>
+      <li>FMIS identifierare</li>
+      <li>Historisk FMIS identifierare</li>
+      <li>RAÄ-nummer</li>
+      <li>Historiskt RAÄ-nummer</li>
+      <li>UUID (Statens historiska museer)</li>
+      <li>Numeriskidentifierare (Statens historiska museer)</li>
+      <li>URI (Wikidata)</li>
+    </ul>
     """ ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
@@ -398,16 +422,87 @@
   dct:description "Entity reconciliation API för lämningar i Kulturmiljöregistret."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """
-    """ ;
+    cnt:chars """FornPunkts API för entity reconciliation av lämningar i Kulturmiljöregistret bygger på datamängden KMR identifieringsindex och är avsett att användas i mjukvaran OpenRefine.</p>
+
+    <p>Utöver informationen i KMR identifieringsindex har tjänsten också berikats med namn på kulturlämningar.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/entity-reconciliation> ;
   dcat:accessURL <https://fornpunkt.se/data/entity-reconciliation> ;
   dct:conformsTo <https://reconciliation-api.github.io/specs/0.1/> .
 
+:bildindex a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Bildindex"@sv ;
+  dct:description "Bildindex är ett API för att hämta metadata om bilder på Kulturlämningar i Kulturmiljöregistert eller FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Bildindex är ett API för att hämta metadata om bilder på Kulturlämningar i Kulturmiljöregistert eller FornPunkt.</p>
 
-<https://www.w3.org/ns/dcat#>
+    <p>Datamängden bygger primärt på data ifrån FornPunkt, Wiki Loves Monuments, K-samsök/museer samt Riksantikvarieämbetets databas Kulturmiljöbild. Databasen innehåller över metadata om över 50 000 bilder.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/bildindex> ;
+  dcat:accessURL <https://fornpunkt.se/data/bildindex> .
+
+:kartindex a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Kartindex"@sv ;
+  dct:description "Kartindex är ett API för att hämta metadata om kartlager/tjänster ifrån myndigheter och andra atörer."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Kartindex är en tjänst för att fritext söka efter kartlager(WMS, TMS och IIIF-tjänster) ifrån myndigheter och andra aktörer. Innehåller bygger på aggregerat och av FornPunkt kurerat innehåll ifrån bland annat DIGG och Wikimedia Commons.</p>
+
+    <p>Om varje lager kan följande information finnas tillgänglig:</p>
+    
+    <ul>
+      <li>Typ</li>
+      <li>URL</li>
+      <li>Lager (om typen är WMS)</li>
+      <li>Namn</li>
+      <li>Utgivare</li>
+      <li>URL för dokumentation</li>
+    </ul>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/kartindex> ;
+  dcat:accessURL <https://fornpunkt.se/data/kartindex> .
+
+:shm-samlingar a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "SHM samlingar"@sv ;
+  dct:description "Tjänst som gör Statens historiska museers tjänst samlingar.shm.se tillgänglig över ett API."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>SHM samlingar gör Statens historiska museers tjänst samlingar.shm.se tillgänglig över ett JSON-baserat API.</p>
+    
+    <p>Med APIet kan du slå upp information om en entitet i samlingar.shm.se samt göra fritext-baserade sökningar.</p>
+    
+    <p>APIet utvecklades för programmatisk åtkomst till fynd och fyndplatser men kan användas med alla entitetstyper.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/shm-samlingar> ;
+  dcat:accessURL <https://fornpunkt.se/data/shm-samlingar> .
+
+:datakatalog a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "FornPunkt datakatalog"@sv ;
+  dct:description "Datamängd som beskriver datamängder och API-tjänster som är en del av FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>FornPunkts datakatalog beskriver API-tjänster och och nerladdningspaket som RDF.</p>
+    
+    <p>Datamängden beskriver primärt informationen i form av DCAT men även Schema.org och CNT. För auktoriteter används primärt Access right (Europeiska unionens publikationsbyrå), Creative Commons och IANA.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
+  dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
+  dcat:accessURL <https://fornpunkt.se/data/datakatalog> .
+
+<https://www.w3.org/TR/vocab-dcat-3/>
   a dct:Standard ;
   dct:title "DCAT"@sv .
 

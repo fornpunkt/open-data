@@ -3,6 +3,9 @@ Todos:
  - add sub/doc pages
  - review/finish distribution documentation
  - review distribution URIs
+ - review use of formats/standards
+ - review use of access url
+ - add a direct-download option to doc pages 
 
 External todos:
 
@@ -14,3 +17,4 @@ Post launch todos:
  - document integrations?
  - add our DOI links and citation capabilities
  - add a form to request access to restricted services
+ - ensure all restricted APIs have clear documentation/examples about their contents
