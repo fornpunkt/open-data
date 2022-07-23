@@ -4,7 +4,7 @@
 
 {{ define "content" }}
 
-<div class="bg-primary" style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg);">
+<div class="bg-primary" style="background: 0/cover url({{ config.Metadata.fornpunkt_root }}static/fp-contours.svg);">
   <div class="container-lg position-relative text-center text-white py-5">
     <h1>Data och tjänster från FornPunkt.se</h1>
     <p>Kulturlämningsdata, historiska kartor, fynd, bilder och mycket mer. Allt som öppen data.</p>
@@ -93,7 +93,7 @@
         <img alt="CC0 logotyp" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Cc-zero.svg" class="" height="100" width="100">
       </div>
       <div class="col-md-10 my-auto py-5">
-        <h2 class="text-5xl font-bold">Upphovsrätt</h2>
+        <h2 class="text-5xl font-bold" id="upphovsratt">Upphovsrätt</h2>
         <p class="py-6">All data som du hittar här är licensierad under Creative Commons Zero(CC0). Det innebär att vi säger tack men nej tack till uppohovsrätten så att du kan göra vad du vill med informationen. Vi rekomenderar ändå att du anger källa när det är möjligt och speciellt när informationen är skapad av volontärer.</p>
         <button class="btn btn-primary">Läs mer om CC0</button>
       </div>
