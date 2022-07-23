@@ -2,7 +2,7 @@ Todos:
  - add a repository license (data.ttl is CC0)
  - add sub/doc pages
  - review/finish distribution documentation
- - move distribution URIs to `/datasets#*`
+ - review distribution URIs
 
 External todos:
 

@@ -105,8 +105,7 @@
   ] .
 
 
-<https://fornpunkt.se/data/fornpunkt-json-ld-api>
-  a dcat:Distribution ;
+:fornpunkt-json-ld-api a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt JSON-LD API"@sv ;
   dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
@@ -144,8 +143,7 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-json-ld-api> .
 
-<https://fornpunkt.se/data/fornpunkt-rss>
-  a dcat:Distribution ;
+:fornpunkt-rss a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt RSS flöde"@sv ;
   dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
@@ -163,8 +161,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss> ;
   dct:conformsTo <https://www.rssboard.org/rss-specification> .
 
-<https://fornpunkt.se/data/fornpunkt-geojson-api>
-  a dcat:Distribution ;
+:fornpunkt-geojson-api a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt GeoJSON API"@sv ;
   dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
@@ -192,8 +189,7 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api> .
 
-<https://fornpunkt.se/data/fornpunkt-wms>
-  a dcat:Distribution ;
+:fornpunkt-wms a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt WMS"@sv ;
   dct:description "WMS tjänst för data i FornPunkt."@sv ;
@@ -209,8 +205,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-wms> ;
   dct:conformsTo <https://www.ogc.org/standards/wms> .
 
-<https://fornpunkt.se/data/fornpunkt-nerladdning>
-  a dcat:Distribution ;
+:fornpunkt-nerladdning a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "FornPunkt Nerladdning (Kommer snart)"@sv ;
   dct:description "Nerladdning av all FornPunkt data som JSON-LD."@sv ;
@@ -232,8 +227,7 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-nerladdning> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-nerladdning> .
 
-<https://fornpunkt.se/data/fornpunkt-indexnow>
-  a dcat:Distribution ;
+:fornpunkt-indexnow a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt IndexNow"@sv ;
   dct:description "Följ ändringar i FornPunkt med IndexNow."@sv ;
@@ -248,8 +242,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-indexnow> ;
   dct:conformsTo <https://www.indexnow.org/> .
 
-<https://fornpunkt.se/data/fornpunkt-sitemaps>
-  a dcat:Distribution ;
+:fornpunkt-sitemaps a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt Sitemaps"@sv ;
   dct:description "Index över information i FornPunkt som XML och text sidkartor."@sv ;
@@ -264,8 +257,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
   dct:conformsTo <https://www.sitemaps.org/> .
 
-<https://fornpunkt.se/data/fornpunkt-ldf>
-  a dcat:Distribution ;
+:fornpunkt-ldf a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt Linked data fragments"@sv ;
   dct:description "Linked data fragments tjänst för FornPunkts data."@sv ;
@@ -281,8 +273,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-ldf> ;
   dct:conformsTo <https://linkeddatafragments.org/> .
 
-<https://fornpunkt.se/data/fornpunkt-sparql>
-  a dcat:Distribution ;
+:fornpunkt-sparql a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt SPARQL"@sv ;
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
@@ -300,8 +291,7 @@
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql> ;
   dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> .
 
-<https://fornpunkt.se/data/microdata>
-  a dcat:Distribution ;
+:microdata a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "Microdata"@sv ;
   dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
@@ -319,8 +309,7 @@
   dcat:accessURL <https://fornpunkt.se/data/microdata> ;
   dct:conformsTo <https://html.spec.whatwg.org/multipage/microdata.html> .
 
-<https://fornpunkt.se/data/fornpunkt-registrering>
-  a dcat:Distribution ;
+:fornpunkt-registrering a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt Registerings API (kommer snart)"@sv ;
   dct:description "API för att registrera information i FornPunkt."@sv ;
@@ -347,8 +336,7 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering> .
 
-<https://fornpunkt.se/data/harmonisierad-nerladdning>
-  a dcat:Distribution ;
+:harmonisierad-nerladdning a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "Harmonisierad lämningsdata nerladdning"@sv ;
   dct:description "Harmonisierad lämningsdata ifrån Riksantikvarieämbetet, Skogsstyrelsen, FornPunkt och Naturvårdsverket."@sv ;
@@ -362,8 +350,7 @@
   dcat:landingPage <https://fornpunkt.se/data/harmonisierad-nerladdning> ;
   dcat:accessURL <https://fornpunkt.se/data/harmonisierad-nerladdning> .
 
-<https://fornpunkt.se/data/kmr-text-korrigering>
-  a dcat:Distribution ;
+:kmr-text-korrigering a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "KMR Text Korrigering"@sv ;
   dct:description "Tjänst för att korrigera beskrivningar ifrån Riksantikvarieämbetets kulturmiljöregister."@sv ;
@@ -377,8 +364,7 @@
   dcat:landingPage <https://fornpunkt.se/data/kmr-text-korrigering> ;
   dcat:accessURL <https://fornpunkt.se/data/kmr-text-korrigering> .
 
-<https://fornpunkt.se/data/besoksmal>
-  a dcat:Distribution ;
+:besoksmal a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "Besöksmål"@sv ;
   dct:description "Besöksmål för Wiki Loves Monuments som JSON-LD."@sv ;
@@ -392,8 +378,7 @@
   dcat:landingPage <https://fornpunkt.se/data/besoksmal> ;
   dcat:accessURL <https://fornpunkt.se/data/besoksmal> .
 
-<https://fornpunkt.se/data/identifieringsindex>
-  a dcat:Distribution ;
+:identifieringsindex a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "KMR identifieringsindex"@sv ;
   dct:description "Index och mappning i mellan olika existerande och historiska identifierare som används för att ange en KMR lämning."@sv ;
@@ -407,8 +392,7 @@
   dcat:landingPage <https://fornpunkt.se/data/identifieringsindex> ;
   dcat:accessURL <https://fornpunkt.se/data/identifieringsindex> .
 
-<https://fornpunkt.se/data/entity-reconciliation>
-  a dcat:Distribution ;
+:entity-reconciliation a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "KMR entity reconciliation"@sv ;
   dct:description "Entity reconciliation API för lämningar i Kulturmiljöregistret."@sv ;
