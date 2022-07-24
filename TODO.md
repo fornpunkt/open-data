@@ -12,6 +12,7 @@ External todos:
  - Setup `.well-known/void` redirect
 
 Post launch todos:
+ - setup SHEX validation
  - migrate inline foaf:Agent to new Agent vocabulary
  - setup void:linksets to samlingar.shm.se, wikipedia.org, and kulturarvsdata.se
  - document integrations?
