@@ -14,11 +14,11 @@ WHERE {
            dct:description ?description ;
            dct:accessRights ?access ;
            dct:type ?type .
-  
+
   OPTIONAL {
     ?dataset dcat:mediaType|dct:conformsTo ?format_or_standard .
     ?format_or_standard dct:title ?format_or_standard_title
   }
 }
 GROUP BY ?dataset ?type ?title ?access ?description
-ORDER BY ?title
+ORDER BY ?description
