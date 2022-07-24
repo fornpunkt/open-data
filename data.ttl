@@ -497,7 +497,7 @@
     
     <p>Datamängden beskriver primärt informationen i form av DCAT men även Schema.org och CNT. För auktoriteter används primärt Access right (Europeiska unionens publikationsbyrå), Creative Commons och IANA.</p>""" ;
   ] ;
-  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
   dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
   dcat:accessURL <https://fornpunkt.se/data/datakatalog> .
