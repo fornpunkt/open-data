@@ -11,7 +11,7 @@
 :VoIDDescription a void:DatasetDescription ;
     dct:title "VoID description for the FornPunkt Datasets"@en ;
     dct:title "VoID beskrivning för FornPunks dataset"@sv ;
-    foaf:primaryTopic <https://fornpunkt.se/data/fornpunkt-json-ld-api>, <https://fornpunkt.se/data/fornpunkt-ldf>, <https://fornpunkt.se/data/fornpunkt-sparql>, <https://fornpunkt.se/data/microdata> .
+    foaf:primaryTopic :fornpunkt-json-ld-api, :fornpunkt-ldf, :fornpunkt-sparql, :microdata .
 
 :Catalog a dcat:Catalog ;
   dct:spatial <http://sws.geonames.org/2661886> ;
