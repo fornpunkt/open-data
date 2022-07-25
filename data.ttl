@@ -11,7 +11,7 @@
 :VoIDDescription a void:DatasetDescription ;
     dct:title "VoID description for the FornPunkt Datasets"@en ;
     dct:title "VoID beskrivning för FornPunks dataset"@sv ;
-    foaf:primaryTopic :fornpunkt-json-ld-api, :fornpunkt-ldf, :fornpunkt-sparql, :microdata .
+    foaf:primaryTopic :fornpunkt-json-ld-api, :fornpunkt-triple-pattern-fragments, :fornpunkt-sparql, :microdata .
 
 :Catalog a dcat:Catalog ;
   dct:spatial <http://sws.geonames.org/2661886> ;
@@ -196,7 +196,7 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>FornPunkts WMS-tjänst innehåller information om lämningar registrerade i FornPunkt och är avsedd att i första hand konsumeras av GIS-vektyg.</p>
 
-    <p>FornPunkts WMS-tjänst uppdateras en gång per dygn och det är därför starkt rekomenderat att man i första hand använder sig av ett alternativt API.</p>""" ;
+    <p>FornPunkts WMS-tjänst uppdateras en gång per dygn och det är rekommenderat att man om möjligt istället använder sig av <a href="https://fornpunkt.se/data/fornpunkt-geojson-api">FornPunkts GeoJSON API</a>.</p>""" ;
 
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
@@ -213,13 +213,13 @@
     cnt:chars """<p>Detta är det enklaste viset att få all FornPunkts data. Datamängden innehåller en serie JSON-LD filer för:</p>
 
     <ul>
-      <li>Lämningar (Schema.org)</li>
+      <li>FornPunkt Lämningar (Schema.org)</li>
       <li>Taggar (Schema.org)</li>
       <li>Observationstyper (SKOS)</li>
       <li>Berikningar (Web Annotations)</li>
     </ul>
 
-    <p>Innehållet uppdateras en gång per vecka.""" ;
+    <p>Innehållet uppdateras en gång per vecka.</p>""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
@@ -229,12 +229,14 @@
 :fornpunkt-indexnow a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt IndexNow"@sv ;
-  dct:description "Följ ändringar i FornPunkt med IndexNow."@sv ;
+  dct:description "Bli notifierad om nya sidor på FornPunkt.se med IndexNow."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
     cnt:chars """<p>Med FornPunkts IndexNow API klienter få notifikatoner om nya sidor och resurser på FornPunkt.se.</p>
     
-    <p>FornPunkts IndexNow API skickar alltid en URL i taget med <code>GET</code>-frågor och kan ibland avstå att skicka nya resurser vid till exempel massimporter.</p>""" ;
+    <p>FornPunkts IndexNow API skickar alltid en URL i taget med <code>GET</code>-frågor även URLer för icke primärt innehåll(dokumentation, etc) skickas över IndexNow.</p>
+    
+    <p>Vid pågående massimporter kan IndexNow-tjänsten pausas och då behöver man använda sig av en alternativ tjänst så som <a href="https://fornpunkt.se/data/fornpunkt-sitemaps">FornPunkts sitemap tjänst</a>.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-indexnow> ;
@@ -249,28 +251,30 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller XML.</p>
 
-    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer.</p>""" ;
+    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor. </p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
   dct:conformsTo <https://www.sitemaps.org/> .
 
-:fornpunkt-ldf a dcat:Distribution ;
+:fornpunkt-triple-pattern-fragments a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
-  dct:title "FornPunkt Linked data fragments"@sv ;
-  dct:description "Linked data fragments tjänst för FornPunkts data."@sv ;
+  dct:title "FornPunkt Triple Pattern Fragments"@sv ;
+  dct:description "Triple Pattern Fragments tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts Linked data fragments tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och kan användas för att snabbt hämta stora mängder data om resurser som matchar specifika krav. Så som om en lämning är resultatet av en fältobservation.</p>""" ;
+    cnt:chars """<p>FornPunkts Triple Pattern Fragments tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och kan användas för att snabbt hämta stora mängder data om resurser som matchar specifika krav. Så som om en lämning är resultatet av en fältobservation.</p>
+
+    <p>Vill du lära dig mer om Triple Pattern Fragments och relaterad teknik? Kolla in <a href="https://linkeddatafragments.org/">Linked data fragments</a>.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
   void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-ldf> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-ldf> ;
-  dct:conformsTo <https://linkeddatafragments.org/> .
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-triple-pattern-fragments> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-triple-pattern-fragments> ;
+  dct:conformsTo <https://linkeddatafragments.org/specification/triple-pattern-fragments/> .
 
 :fornpunkt-sparql a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
@@ -296,7 +300,7 @@
   dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata(Schema.org). Det är rekomenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
+    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata (<a href="https://schema.org">Schema.org</a>). Det är rekomenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
     
     <p>Vi strävar efter att exponera så mycket information som möjligt som Microdata men det är inte alltid vi kan exponera all information. Är detta viktigt för dig bör du överväga att istället konsumera JSON-LD.</p>""" ;
   ] ;
@@ -383,7 +387,7 @@
 
     <p>Dataset utvecklas kontinueligt för att användas i tävlingen Wiki Loves Monuments och inkluderar täcker idag bara ett fåtal svenska kommuner.</p>
 
-    <p>Informationen är modellerad enligt Schema.org och använder sig av Wikidata och K-samsök som auktoriteter.</p>""" ;
+    <p>Informationen är modellerad enligt <a href="https://schema.org">Schema.org</a> och använder sig av Wikidata och K-samsök för auktoriteter.</p>""" ;
   ] ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
@@ -522,9 +526,9 @@
   a dct:Standard ;
   dct:title "SPARQL"@sv .
 
-<https://linkeddatafragments.org/>
+<https://linkeddatafragments.org/specification/triple-pattern-fragments/>
   a dct:Standard ;
-  dct:title "Linked data fragments"@sv .
+  dct:title "Triple Pattern Fragments"@sv .
 
 <https://html.spec.whatwg.org/multipage/microdata.html>
   a dct:Standard ;
