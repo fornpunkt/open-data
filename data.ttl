@@ -110,28 +110,32 @@
   dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/observationstyper) eller per användare(lämningar).</p>
+    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/kommentarer/annoteringar/observationstyper) eller per användare(lämningar).</p>
 
-    <h2>Hämtning per resurs</h2>
+<h2>Hämtning per resurs</h2>
 
-    <p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code></code> eller lägga till suffixet <code>.jsonld</code>.</p>
+<p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
 
-    <code>curl</code>
+<ul>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/lamning/ynB2enR</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/tagg/fossil-akermark</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e#kommentarer-gRn6Vnd</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/observationstyper</code></li>
+</ul>
 
-    <code>curl</code>
+<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment</p>
 
-    <code>curl https://fornpunkt.se/tagg/fossil-akermark.jsonld</code>
+<ul>
+    <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld</a></li>
+    <li><a href="https://fornpunkt.se/tagg/fossil-akermark.jsonld" target="_blank">https://fornpunkt.se/tagg/fossil-akermark.jsonld</a></li>
+</ul>
 
-    <p>Undantaget är observationstyper där resursen alltid svarar med JSON-LD, det är dock rekomenderat att man sätter <code>Accept</code>-headern till <code></code>.</p>
-    <code>curl https://fornpunkt.se/observationstyper</code>
+<h2>Hämtning per användare</h2>
 
-    <h2>Hämtning per användare</h2>
+<p>En inloggad användare kan hämta sin data genom att hämta följande URL:</p>
 
-    <p>För att alla lämningar en användare registrerat som JSON-LD behöver man av användaren få en åtkomstnyckel med läsbehörighet. Har man en sådan nyckel kan man hämta alla registeringar på följande vis.</p>
-
-    <code>curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
-
-    <p>Notera att detta kan resultera i att många tusen lämningar hämtas samtidigt och därför bör man inte göra detta med hög frekvens.</p>""" ;
+<a href="https://fornpunkt.se/api/lamnings/export?format=json-ld" target="_blank">https://fornpunkt.se/api/lamnings/export?format=json-ld</a>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:feature <http://www.w3.org/ns/formats/JSON-LD>;
@@ -148,11 +152,24 @@
   dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg. Flödet innehåller en lämnings beskrivning, titel, registrerare och dess URI.</p>
+    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg eller de senaste kommentarerna på en give lämning.</p>
 
-    <p>En taggs RSS-flöde hittas genom att lägga till suffixet på en taggs URI/URL.</p>
+<h2>Nya lämningar</h2>
 
-    <code>https://fornpunkt.se/tagg/fossil-akermark.rss</code>""" ;
+<p>Flödet innehåller en lämnings beskrivning, titel, registrerare och dess URI. En taggs RSS-flöde hittas genom att lägga till suffixet <code>.rss</code> på en taggs URI/URL.</p>
+
+<ul>
+    <li><a href="https://fornpunkt.se/tagg/bro.rss" target="_blank">https://fornpunkt.se/tagg/bro.rss</a></li>
+</ul>
+
+<h2>Kommentarer</h2>
+
+<p>Kommentarer exponeras i RSS-flöden på lämnings nivå och hittas genom att lägga till suffixet <code>.rss</code> på en lämnings URI/URL.</p>
+
+<ul>
+    <li><a href="https://fornpunkt.se/lamning/6jpqonp.rss" target="_blank">https://fornpunkt.se/lamning/6jpqonp.rss</a></li>
+    <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.rss" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.rss</a></li>
+</ul>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/application/application/rss+xml> ;
@@ -365,9 +382,9 @@
     <p>Vanliga fel som tjänsten korrigerar är:</p>
 
     <ul>
-      <li>Ihopskrivna ord (tregrönstensyxor -> tre grönstensyxor)</li>
-      <li>Avsaknaden blanksteg i mellan medningar. (grönstensyxor.Ungefärlig -> grönstensyxor. Ungefärlig)</li>
-      <li>Avsaknad av radbrytning i tillexempel listor.</li>
+      <li>Ihop skrivna ord (tregrönstensyxor -> tre grönstensyxor)</li>
+      <li>Avsaknaden blanksteg i mellan meningar. (grönstensyxor.Ungefärlig -> grönstensyxor. Ungefärlig)</li>
+      <li>Avsaknad av radbrytning i till exempel listor.</li>
     </ul>
 
     <p>Tjänsten korrigerar inte alla fel och avser inte att rätta fel som inte uppstått under digitalisering(så som stavfel). Tjänsten skapades för att göra texterna i Kulturmiljöregistret lättare att läsa.</p>""" ;
@@ -380,12 +397,12 @@
 :wlm-besoksmal a dcat:Distribution ;
   dct:type <http://schema.org/DataDownload> ;
   dct:title "Besöksmål"@sv ;
-  dct:description "Besöksmål för Wiki Loves Monuments som JSON-LD."@sv ;
+  dct:description "Besöksmål för Wiki Loves Monuments som JSON-LD. (K-samsök)"@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
     cnt:chars """<p>Besöksmål är dataset bestående av arbetslivsmuseum, kulturlämningar och byggnadsminnen kurerade tillsammans till besöksmål.</p>
 
-    <p>Dataset utvecklas kontinueligt för att användas i tävlingen Wiki Loves Monuments och inkluderar täcker idag bara ett fåtal svenska kommuner.</p>
+    <p>Dataset utvecklas kontinuerligt för att användas i tävlingen Wiki Loves Monuments och inkluderar täcker idag bara ett fåtal svenska kommuner.</p>
 
     <p>Informationen är modellerad enligt <a href="https://schema.org">Schema.org</a> och använder sig av Wikidata och K-samsök för auktoriteter.</p>""" ;
   ] ;
@@ -411,7 +428,7 @@
       <li>RAÄ-nummer</li>
       <li>Historiskt RAÄ-nummer</li>
       <li>UUID (Statens historiska museer)</li>
-      <li>Numeriskidentifierare (Statens historiska museer)</li>
+      <li>Numerisk identifierare (Statens historiska museer)</li>
       <li>URI (Wikidata)</li>
     </ul>
     """ ;
@@ -443,7 +460,7 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>Bildindex är ett API för att hämta metadata om bilder på kulturlämningar i Kulturmiljöregistert eller FornPunkt.</p>
 
-    <p>Datamängden bygger primärt på data ifrån FornPunkt, Wiki Loves Monuments, K-samsök/museer samt Riksantikvarieämbetets databas Kulturmiljöbild. Databasen innehåller över metadata om över 50 000 bilder.</p>""" ;
+    <p>Datamängden bygger primärt på data från FornPunkt, Wiki Loves Monuments, K-samsök/museer samt Riksantikvarieämbetets databas Kulturmiljöbild. Databasen innehåller över metadata om över 50 000 bilder.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
@@ -456,7 +473,7 @@
   dct:description "Kartindex är ett API för att hämta metadata om kartlager/tjänster ifrån myndigheter och andra atörer."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Kartindex är en tjänst för att fritext söka efter kartlager(WMS, TMS och IIIF-tjänster) ifrån myndigheter och andra aktörer. Innehåller bygger på aggregerat och av FornPunkt kurerat innehåll ifrån bland annat DIGG och Wikimedia Commons.</p>
+    cnt:chars """<p>Kartindex är en tjänst för att fritextsöka efter kartlager(WMS, TMS och IIIF-tjänster) ifrån myndigheter och andra aktörer. Innehåller bygger på aggregerade data och av FornPunkt kurerat innehåll från bland annat DIGG och Wikimedia Commons.</p>
 
     <p>Om varje lager kan följande information finnas tillgänglig:</p>
     
