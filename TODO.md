@@ -1,8 +1,7 @@
 Todos:
- - add a repository license (data.ttl is CC0)
  - review use of formats/standards
  - review use of access url
- - add a direct-download option to doc pages 
+ - add a direct-download option to doc pages
 
 External todos:
 
