@@ -56,7 +56,7 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/kommentarer/annoteringar/observationstyper) eller per användare(lämningar).</p>
 
-<h2>Hämtning per resurs</h2>
+<h2>Per resurs</h2>
 
 <p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
 
@@ -75,7 +75,7 @@
     <li><a href="https://fornpunkt.se/tagg/fossil-akermark.jsonld" target="_blank">https://fornpunkt.se/tagg/fossil-akermark.jsonld</a></li>
 </ul>
 
-<h2>Hämtning per användare</h2>
+<h2>Per användare</h2>
 
 <p>En inloggad användare kan hämta sin data genom att hämta följande URL:</p>
 
@@ -93,14 +93,14 @@
 :fornpunkt-rss a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt RSS flöde"@sv ;
-  dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
+  dct:description "RSS flöden för lämningar och kommentarer i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
     cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg eller de senaste kommentarerna på en given lämning.</p>
 
 <h2>Nya lämningar</h2>
 
-<p>Flödet innehåller en lämnings beskrivning, titel, registrerare och dess URI. En taggs RSS-flöde hittas genom att lägga till suffixet <code>.rss</code> på en taggs URI/URL.</p>
+<p>Flödet innehåller en lämnings beskrivning, titel, registrerare och URI. En taggs RSS-flöde hittas genom att lägga till suffixet <code>.rss</code> på en taggs URI/URL.</p>
 
 <ul>
     <li><a href="https://fornpunkt.se/tagg/bro.rss" target="_blank">https://fornpunkt.se/tagg/bro.rss</a></li>
@@ -127,22 +127,25 @@
   dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Man kan hämta lämningar som GeoJSON för enskilda resurser, för lämningar inom ett geografiskt område och per användare.
+    cnt:chars """<p>Du kan hämta lämningar som GeoJSON för enskilda lämningar eller för lämningar inom ett geografiskt område och per användare.
 
-    <p>För en enskild lämning lägg till suffixet <code>.geojson</code> till lämningens URI.</p>
+    <h2>Enskilda lämningar</h2>
 
-    <code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code>
+    <p>För en enskild lämning lägg till suffixet <code>.geojson</code> till en lämnings-URI, för att hämta GeoJSON.</p>
 
-    <p>För alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer eller nerladdningstjänsten.</p>
+    <p><code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code></p>
 
-    <code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code>
+    <h2>Lämningar innom ett geografiskt område</h2>
 
+    <p>För att hämta alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer.</p>
 
-    <p>För att alla lämningar en användare registrerat som GeoJSON behöver man av användaren få en åtkomstnyckel med läsbehörighet. Har man en sådan nyckel kan man hämta alla registeringar på följande vis.</p>
+    <p><code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code></p>
 
-    <code>curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
+    <h2>Per användare</h2>
 
-    <p>Notera att detta kan resultera i att många tusen lämningar hämtas samtidigt och därför bör man inte göra detta med hög frekvens.</p>""" ;
+    <p>En inloggad användare kan hämta sin data genom följande URL:</p>
+
+    <a href="https://fornpunkt.se/api/lamnings/export?format=geojson" target="_blank">https://fornpunkt.se/api/lamnings/export?format=geojson</a>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json+geo> ;
@@ -170,7 +173,7 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
+    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
     
     <p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>""" ;
   ] ;
