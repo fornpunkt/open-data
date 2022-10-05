@@ -209,9 +209,9 @@
   dct:description "Datamängd som beskriver datamängder och API-tjänster som är en del av FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts datakatalog beskriver API-tjänster och och nerladdningspaket som RDF.</p>
+    cnt:chars """<p>FornPunkts datakatalog beskriver API-tjänster och och nerladdningspaket som RDF. Detta dataset används primärt för som källa till FornPunkts dataportal och förvaltas öppet på <a href="https://github.com/fornpunkt/open-data">Github</a>.</p>
     
-    <p>Datamängden beskriver primärt informationen i form av DCAT men även Schema.org och CNT. För auktoriteter används primärt Access right (Europeiska unionens publikationsbyrå), Creative Commons och IANA.</p>""" ;
+    <p>Datamängden beskriver primärt informationen i form av <a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT</a> men även <a href="https://www.w3.org/TR/vocab-dcat-3/">Schema.org</a> och <a href="https://www.w3.org/TR/Content-in-RDF10/">CNT</a>. För auktoriteter används primärt <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/access-right">Access right</a> (Europeiska unionens publikationsbyrå), <a href="https://wiki.creativecommons.org/wiki/License_Properties">Creative Commons</a> och <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">IANA</a>.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
