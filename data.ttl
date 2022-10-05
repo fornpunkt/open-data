@@ -185,7 +185,7 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>Man kan hämta lämningar som GeoJSON för enskilda resurser, för lämningar inom ett geografiskt område och per användare.
 
-    <p>För enenskild lämning lägg till suffixet <code>.geojson</code> till lämningens URI.</p>
+    <p>För en enskild lämning lägg till suffixet <code>.geojson</code> till lämningens URI.</p>
 
     <code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code>
 
@@ -196,7 +196,7 @@
 
     <p>För att alla lämningar en användare registrerat som GeoJSON behöver man av användaren få en åtkomstnyckel med läsbehörighet. Har man en sådan nyckel kan man hämta alla registeringar på följande vis.</p>
 
-    <code>curl curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
+    <code>curl https://fornpunkt.se/api/lamnings/export?format=json-ld&token={ÅTKOMSTNYCKEL}</code>
 
     <p>Notera att detta kan resultera i att många tusen lämningar hämtas samtidigt och därför bör man inte göra detta med hög frekvens.</p>""" ;
   ] ;
