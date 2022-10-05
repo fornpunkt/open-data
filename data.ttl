@@ -96,7 +96,7 @@
   dct:description "RSS flöden för lämningar och annoteringar i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg eller de senaste kommentarerna på en give lämning.</p>
+    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg eller de senaste kommentarerna på en given lämning.</p>
 
 <h2>Nya lämningar</h2>
 
@@ -155,9 +155,9 @@
   dct:description "Index över information i FornPunkt som XML och text sidkartor."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller XML.</p>
+    cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller som XML.</p>
 
-    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor. </p>""" ;
+    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
@@ -170,9 +170,9 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering.</p>
+    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
     
-    <p>Med SPARQL tjänsten kan man ställa komplexa frågor om informationen. Det finns både ett SPARQL-bibliotek med frågor skapade på förhand och ett visualiseringsverktyg som är öppen källkod och fritt att använda.</p>""" ;
+    <p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
