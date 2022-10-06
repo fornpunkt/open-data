@@ -38,6 +38,7 @@
     dcat:distribution :fornpunkt-sitemaps ;
     dcat:distribution :fornpunkt-sparql ;
     dcat:distribution :microdata ;
+    dcat:distribution :fornpunkt-registrering ;
   ],
   [
     a dcat:Dataset ;
@@ -52,7 +53,7 @@
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
     dcat:distribution :microdata ;
-  ], .
+  ] .
 
 
 :fornpunkt-json-ld-api a dcat:Distribution ;
@@ -224,6 +225,20 @@
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
   dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
   dcat:accessURL <https://fornpunkt.se/data/datakatalog> .
+
+:fornpunkt-registrering a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Registerings API (kommer snart)"@sv ;
+  dct:description "API för att registrera information i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med FornPunkts registerings API kan du registera nya lämningar, taggar och kommentarer. Det är än inte möjligt att redigera existerande information med tjänsten.</p>
+    <p>Registrerings APIet testas fortfarande och du kan anmäla ditt intresse genom att skicka en e-post till <a href="mailto:hej@fornpunk.se">mailto:hej@fornpunk.se</a>.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering> .
 
 <https://www.w3.org/TR/vocab-dcat-3/>
   a dct:Standard ;
