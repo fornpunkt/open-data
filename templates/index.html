@@ -18,7 +18,7 @@
         <div class="card-body">
           <h2 class="card-title h5">GeoJSON</h2>
           <p class="card-text">Lämningar registrerade i FornPunkt som GeoJSON för GIS-verktyg och webbtjänster.</p>
-          <a href="fornpunkt-geojson-api" class="btn btn-secondary">Läs mer</a>
+          <a href="{{ config.Metadata.fornpunkt_root }}/data/fornpunkt-geojson-api" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
         <div class="card-body">
           <h2 class="card-title h5">JSON-LD</h2>
           <p class="card-text">FornPunkts data som länkade data. JSON-LD är FornPunkts mest detaljrika format.</p>
-          <a href="fornpunkt-json-ld-api" class="btn btn-secondary">Läs mer</a>
+          <a href="{{ config.Metadata.fornpunkt_root }}/data/fornpunkt-json-ld-api" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="card-body">
           <h2 class="card-title h5">Registrerings API</h2>
           <p class="card-text">Bygg integrationer som kan registrera och berika information direkt i FornPunkt.</p>
-          <a href="fornpunkt-registrering" class="btn btn-secondary">Läs mer</a>
+          <a href="{{ config.Metadata.fornpunkt_root }}/data/fornpunkt-registrering" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -62,12 +62,13 @@
     <tr>
       <td>
           <div>
-            <a href="{{ replace .dataset.String "https://fornpunkt.se/datasets#" "" 1 }}" class="text-body text-decoration-none"><div class="fw-bold">{{ .title }}</div></a>
-              {{ if eq .type.String "http://schema.org/WebAPI" }}
-              <small class="opacity-75">Tjänst</small>
-              {{ else }}
-              <small class="opacity-75">Nerladdning</small>
-              {{ end }}
+            {{- $url := print config.Metadata.fornpunkt_root "/data/" -}}
+            <a href="{{ replace .dataset.String "https://fornpunkt.se/datasets#" $url 1 }}" class="text-body text-decoration-none"><div class="fw-bold">{{ .title }}</div></a>
+            {{ if eq .type.String "http://schema.org/WebAPI" }}
+            <small class="opacity-75">Tjänst</small>
+            {{ else }}
+            <small class="opacity-75">Nerladdning</small>
+            {{ end }}
           </div>
       </td>
       <td>

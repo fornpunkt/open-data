@@ -181,7 +181,7 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
+    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
     
     <p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>""" ;
   ] ;
