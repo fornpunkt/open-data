@@ -10,6 +10,8 @@ SELECT
   ?description
   ?standard
   ?standard_title
+  ?media_type
+  ?media_type_title
   ?documentation_fulltext
   (REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", "") AS ?slug)
 WHERE {
@@ -25,6 +27,11 @@ WHERE {
   OPTIONAL {
     ?dataset dct:conformsTo ?standard .
     ?standard dct:title ?standard_title .
+  }
+
+  OPTIONAL {
+    ?dataset dcat:mediaType ?media_type .
+    ?media_type dct:title ?media_type_title .
   }
 }
 ORDER BY ?title
