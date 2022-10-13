@@ -66,7 +66,7 @@
 
 <h2>Per resurs</h2>
 
-<p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
+<p>För att hämta data från en resurs kan man sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
 
 <ul>
     <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/lamning/ynB2enR</code></li>
@@ -76,7 +76,7 @@
     <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/observationstyper</code></li>
 </ul>
 
-<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment</p>
+<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment:</p>
 
 <ul>
     <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld</a></li>
@@ -85,7 +85,7 @@
 
 <h2>Per användare</h2>
 
-<p>En inloggad användare kan hämta sin data genom att hämta följande URL:</p>
+<p>En inloggad användare kan hämta sin data genom följande URL:</p>
 
 <a href="https://fornpunkt.se/api/lamnings/export?format=json-ld" target="_blank">https://fornpunkt.se/api/lamnings/export?format=json-ld</a>""" ;
   ] ;
