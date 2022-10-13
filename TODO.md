@@ -8,6 +8,7 @@ External todos:
  - Setup `.well-known/void` redirect
 
 Post launch todos:
+ - setup sparql endpoint proxying fornpunkt.se/datasets
  - document remaing services
  - setup SHEX validation
  - migrate inline foaf:Agent to new Agent vocabulary
