@@ -143,7 +143,7 @@
 
     <p><code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code></p>
 
-    <h2>Lämningar innom ett geografiskt område</h2>
+    <h2>Lämningar inom ett geografiskt område</h2>
 
     <p>För att hämta alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer.</p>
 
@@ -168,7 +168,7 @@
     a cnt:ContentAsText ;
     cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller som XML.</p>
 
-    <p>Denna tjänst är primärt avsedd för aggreatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor.</p>""" ;
+    <p>Denna tjänst är primärt avsedd för aggregatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
@@ -181,7 +181,7 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsädd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
+    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsedd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
     
     <p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>""" ;
   ] ;
@@ -199,7 +199,7 @@
   dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata (<a href="https://schema.org">Schema.org</a>). Det är rekomenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
+    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata (<a href="https://schema.org">Schema.org</a>). Det är rekommenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
     
     <p>Vi strävar efter att exponera så mycket information som möjligt som Microdata men det är inte alltid vi kan exponera all information. Är detta viktigt för dig bör du överväga att istället konsumera JSON-LD.</p>""" ;
   ] ;
@@ -228,11 +228,11 @@
 
 :fornpunkt-registrering a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
-  dct:title "FornPunkt Registerings API (kommer snart)"@sv ;
+  dct:title "FornPunkt registrerings API (kommer snart)"@sv ;
   dct:description "API för att registrera information i FornPunkt."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Med FornPunkts registerings API kan du registera nya lämningar, taggar och kommentarer. Det är än inte möjligt att redigera existerande information med tjänsten.</p>
+    cnt:chars """<p>Med FornPunkts registrerings API kan du registrera nya lämningar, taggar och kommentarer. Det är än inte möjligt att redigera existerande information med tjänsten.</p>
     <p>Registrerings APIet testas fortfarande och du kan anmäla ditt intresse genom att skicka en e-post till <a href="mailto:hej@fornpunk.se">hej@fornpunk.se</a>.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
