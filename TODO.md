@@ -5,9 +5,12 @@ Todos:
 
 External todos:
 
- - Setup `.well-known/void` redirect
+ - Setup `.well-known/void` redirect & deploy /datasets
 
 Post launch todos:
+ - setup sitemap
+ - review page metadata
+ - check indexing in Google datasets
  - setup sparql endpoint proxying fornpunkt.se/datasets
  - document remaing services
  - setup SHEX validation
