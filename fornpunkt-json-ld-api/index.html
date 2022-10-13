@@ -16,11 +16,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="https://fornpunkt.se/data#upphovsratt">Upphovsrätt</a>
-        </li>
-      </ul>
+      <ul class="navbar-nav"></ul>
       <div>
         <a class="btn btn-sm btn-primary fw-bold" href="https://fornpunkt.se">Till FornPunkt</a>
       </div>
@@ -29,13 +25,18 @@
 </nav>
     
 <div class="container-lg py-5">
-  
+  <div class="float-end">
+    
+    
+      <a class="btn btn-primary btn-sm mt-2 ms-1" href="https://www.iana.org/assignments/media-types/application/ld&#43;json">JSON-LD</a>
+    
+  </div>
   <h1>FornPunkt JSON-LD API</h1>
   <p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/kommentarer/annoteringar/observationstyper) eller per användare(lämningar).</p>
 
 <h2>Per resurs</h2>
 
-<p>För att hämta data från en resurs kan man antingen sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
+<p>För att hämta data från en resurs kan man sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
 
 <ul>
     <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/lamning/ynB2enR</code></li>
@@ -45,7 +46,7 @@
     <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/observationstyper</code></li>
 </ul>
 
-<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment</p>
+<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment:</p>
 
 <ul>
     <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld</a></li>
@@ -54,7 +55,7 @@
 
 <h2>Per användare</h2>
 
-<p>En inloggad användare kan hämta sin data genom att hämta följande URL:</p>
+<p>En inloggad användare kan hämta sin data genom följande URL:</p>
 
 <a href="https://fornpunkt.se/api/lamnings/export?format=json-ld" target="_blank">https://fornpunkt.se/api/lamnings/export?format=json-ld</a>
 </div>
@@ -63,7 +64,7 @@
 
 <div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
   <div class="text-white container">
-    <p class="m-0">Vi jobbar ständigt på att utveckla existernade och nya tjänster för att kulturarvsinformation ska bli så tillgänglig som möjligt. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
+    <p class="m-0">Vi jobbar ständigt på att utveckla existerande och nya tjänster för att kulturarvsinformation ska bli så tillgänglig som möjligt. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
   </div>
 </div>
 
