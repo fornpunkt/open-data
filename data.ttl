@@ -163,7 +163,7 @@
 :fornpunkt-sitemaps a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
   dct:title "FornPunkt Sitemaps"@sv ;
-  dct:description "Index över information i FornPunkt som XML och text sidkartor."@sv ;
+  dct:description "Index över information i FornPunkt som XML och text-sidkartor."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
     cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller som XML.</p>
