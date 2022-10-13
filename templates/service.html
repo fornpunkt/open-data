@@ -4,11 +4,14 @@
 
 {{ define "content" }}
 <div class="container-lg py-5">
-  {{ if .standard }}
   <div class="float-end">
-    <a class="btn btn-primary btn-sm mt-2" href="{{ .standard }}">{{ .standard_title }}</a>
+    {{ if .standard }}
+      <a class="btn btn-primary btn-sm mt-2" href="{{ .standard }}">{{ .standard_title }}</a>
+    {{ end }}
+    {{ if .media_type }}
+      <a class="btn btn-primary btn-sm mt-2 ms-1" href="{{ .media_type }}">{{ .media_type_title }}</a>
+    {{ end }}
   </div>
-  {{ end }}
   <h1>{{ .title }}</h1>
   {{ safe_html .documentation_fulltext }}
 </div>
