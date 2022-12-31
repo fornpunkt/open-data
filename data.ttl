@@ -53,6 +53,14 @@
     dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
     dct:spatial <http://sws.geonames.org/2661886> ;
     dcat:distribution :microdata ;
+    dcat:distribution :kmr-reconciliation ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "GeoNames"@en ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dct:spatial <http://sws.geonames.org/6295630> ;
+    dcat:distribution :geonames-reconciliation ;
   ] .
 
 
@@ -240,6 +248,38 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering> .
 
+:geonames-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "GeoNames reconciliation API"@sv ;
+  dct:description "API för att matcha platser mot GeoNames i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med FornPunkts GeoNames reconciliation API kan du matcha platser i fritext mot GeoNames auktoriteter i verktyget <a href="https://openrefine.org/">OpenRefine</a>.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar. Tjänsten är inte publik men fri att använda för alla som avser att använda den för att berika kulturmiljöinformation. Skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a> och beskriv ditt projekt för att få tillgång.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/geonames-reconciliation> ;
+  dcat:accessURL <https://fornpunkt.se/data/geonames-reconciliation> .
+
+:kmr-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Kulturmiljöregistret reconciliation API"@sv ;
+  dct:description "API för att matcha kulturlämningar mot Kulturminnesregistret i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """Med FornPunkts reconciliation API för Kulturmiljöregistret kan du matcha kulturlämningsidentifierare mot Kulturmiljöregistrets UUIDn i verktyget <a href="https://openrefine.org/">OpenRefine</a>. Tjänsten kan matcha många olika typer av identifierare så som kulturarvdata-URIer, Lämningsnummer, RÄA-nummer, FMIS-nummer med flera.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar. Tjänsten är inte publik men fri att använda för alla som avser att använda den för att berika kulturmiljöinformation. Skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a> och beskriv ditt projekt för att få tillgång.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/kmr-reconciliation> ;
+  dcat:accessURL <https://fornpunkt.se/data/kmr-reconciliation> .
+
 <https://www.w3.org/TR/vocab-dcat-3/>
   a dct:Standard ;
   dct:title "DCAT"@sv .
@@ -268,7 +308,7 @@
   a dct:Standard ;
   dct:title "Microdata"@sv .
 
-<https://reconciliation-api.github.io/specs/0.1/>
+<https://reconciliation-api.github.io/specs/0.2/>
   a dct:Standard ;
   dct:title "Entity reconciliation API"@en .
 
