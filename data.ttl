@@ -156,7 +156,7 @@
     <a href="https://fornpunkt.se/api/lamnings/export?format=geojson" target="_blank">https://fornpunkt.se/api/lamnings/export?format=geojson</a>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json+geo> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api> .
 
@@ -296,6 +296,6 @@
   a dct:Format ;
   dct:title "JSON-LD"@sv .
 
-<https://www.iana.org/assignments/media-types/application/json+geo>
+<https://www.iana.org/assignments/media-types/application/geo+json
   a dct:Format ;
   dct:title "GeoJSON"@sv .
