@@ -4,6 +4,8 @@
 
 {{ define "canonical" }}{{ config.Metadata.fornpunkt_root }}/data/{{ .slug }}/{{ end }}
 
+{{ define "description" }}{{ .description }}{{ end }}
+
 {{ define "content" }}
 <div class="container-lg py-5">
   <div class="float-end">
