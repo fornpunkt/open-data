@@ -132,7 +132,6 @@
 </ul>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-  dcat:mediaType <https://www.iana.org/assignments/media-types/application/application/application/rss+xml> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-rss> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss> ;
   dct:conformsTo <https://www.rssboard.org/rss-specification> .
@@ -181,7 +180,8 @@
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
-  dct:conformsTo <https://www.sitemaps.org/> .
+  dct:conformsTo <https://www.sitemaps.org/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
 
 :fornpunkt-sparql a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
@@ -231,6 +231,7 @@
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
   dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
   dcat:accessURL <https://fornpunkt.se/data/datakatalog> .
 
@@ -336,6 +337,14 @@
   a dct:Format ;
   dct:title "JSON-LD"@sv .
 
-<https://www.iana.org/assignments/media-types/application/geo+json
+<https://www.iana.org/assignments/media-types/application/geo+json>
   a dct:Format ;
   dct:title "GeoJSON"@sv .
+
+<https://www.iana.org/assignments/media-types/text/turtle>
+  a dct:Format ;
+  dct:title "Turtle"@sv .
+
+<https://www.iana.org/assignments/media-types/application/xml>
+  a dct:Format ;
+  dct:title "XML"@sv .
