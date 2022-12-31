@@ -1,26 +1,26 @@
-{{ template "base" . }}
+{{- template "base" . -}}
 
-{{ define "title" }}{{ .title }}{{ end }}
+{{- define "title" -}}{{ .title }}{{- end -}}
 
-{{ define "canonical" }}{{ config.Metadata.fornpunkt_root }}/data/{{ .slug }}/{{ end }}
+{{- define "canonical" -}}{{ config.Metadata.fornpunkt_root }}/data/{{ .slug }}/{{- end -}}
 
-{{ define "description" }}{{ .description }}{{ end }}
+{{- define "description" -}}{{ .description }}{{- end -}}
 
-{{ define "content" }}
+{{- define "content" -}}
 <div class="container-lg py-5">
   <div class="float-end">
-    {{ if .standard }}
+    {{- if .standard -}}
       <a class="btn btn-primary btn-sm mt-2" href="{{ .standard }}">{{ .standard_title }}</a>
-    {{ end }}
-    {{ if .media_type }}
+    {{- end -}}
+    {{- if .media_type -}}
       <a class="btn btn-primary btn-sm mt-2 ms-1" href="{{ .media_type }}">{{ .media_type_title }}</a>
-    {{ end }}
+    {{- end -}}
   </div>
   <h1>{{ .title }}</h1>
-  {{ safe_html .documentation_fulltext }}
+  {{- safe_html .documentation_fulltext -}}
 </div>
 
-{{ if eq .access (uri "http://publications.europa.eu/resource/authority/access-right/RESTRICTED") }}
+{{- if eq .access (uri "http://publications.europa.eu/resource/authority/access-right/RESTRICTED") -}}
 <div class="container-lg">
   <div class="card mb-5 text-bg-primary">
     <div class="card-body">
@@ -29,11 +29,11 @@
     </div>
   </div>
 </div>
-{{ end }}
+{{- end -}}
 
 <div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
   <div class="text-white container">
     <p class="m-0">Vi jobbar ständigt på att utveckla existerande och nya tjänster för att kulturarvsinformation ska bli så tillgänglig som möjligt. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
   </div>
 </div>
-{{ end }}
+{{- end -}}

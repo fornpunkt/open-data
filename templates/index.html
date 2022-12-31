@@ -1,13 +1,12 @@
-{{ template "base" . }}
+{{- template "base" . -}}
 
-{{ define "title" }}Dataportal - FornPunkt{{ end }}
+{{- define "title" -}}Dataportal - FornPunkt{{- end -}}
 
-{{ define "canonical" }}{{ config.Metadata.fornpunkt_root }}/data/{{ end }}
+{{- define "canonical" -}}{{- config.Metadata.fornpunkt_root -}}/data/{{- end -}}
 
-{{ define "description" }}Öppna data och tjänster från FornPunkt.{{ end }}
+{{- define "description" -}}Öppna data och tjänster från FornPunkt.{{- end -}}
 
-{{ define "content" }}
-
+{{- define "content" -}}
 <div class="bg-primary" style="background: 0/cover url({{ config.Metadata.fornpunkt_root }}/static/fp-contours.svg);">
   <div class="container-lg position-relative text-center text-white py-5">
     <h1>Data och tjänster från FornPunkt.se</h1>
@@ -62,35 +61,35 @@
       </thead>
       <tbody>
 
-    {{ range . }}
+    {{- range . -}}
     <tr>
       <td>
           <div>
             {{- $url := print config.Metadata.fornpunkt_root "/data/" -}}
             <a href="{{ replace .dataset.String "https://fornpunkt.se/datasets#" $url 1 }}" class="text-body text-decoration-none"><div class="fw-bold">{{ .title }}</div></a>
-            {{ if eq .type.String "http://schema.org/WebAPI" }}
+            {{- if eq .type.String "http://schema.org/WebAPI" -}}
             <small class="opacity-75">Tjänst</small>
-            {{ else }}
+            {{- else -}}
             <small class="opacity-75">Nerladdning</small>
-            {{ end }}
+            {{- end -}}
           </div>
       </td>
       <td>
-        {{ if eq .access.String "http://publications.europa.eu/resource/authority/access-right/PUBLIC" }}
+        {{- if eq .access.String "http://publications.europa.eu/resource/authority/access-right/PUBLIC" -}}
           <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        {{ else }}
+        {{- else -}}
           <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        {{ end }}
+        {{- end -}}
       </td>
       <td>{{ .description }}</td>
       <td>
-        {{ range split .tags "|" }}
+        {{- range split .tags "|" -}}
         <span class="badge rounded-pill text-bg-primary">{{ . }}</span>
-        {{ end }}
+        {{- end -}}
       </td>
     </tr>
-    {{ end }}
+    {{- end -}}
     </tbody>
 </table>
 </div>
-{{ end }}
+{{- end -}}
