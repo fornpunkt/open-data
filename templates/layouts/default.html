@@ -4,9 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ block "title" . }}{{ .title }}{{ end }}</title>
+
+  <title>{{ block "title" . }}{{ end }}</title>
+  <meta name="og:title" content="{{ block "title" . }}{{ end }}">
   <meta name="description" content="{{ block "description" . }}{{ end }}">
+  <meta name="og:description" content="{{ block "description" . }}{{ end }}">
   <link rel="canonical" href="{{ block "canonical" . }}{{ end }}">
+  <meta name="og:url" content="{{ block "canonical" . }}{{ end }}">
+
+  <meta name="og:site_name" content="FornPunkt">
+  <meta name="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta name="theme-color" content="#30734C">
+
   <link href="https://fornpunkt.se/static/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fornpunkt.se/static/style.css">
 </head>
