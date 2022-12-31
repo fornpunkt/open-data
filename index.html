@@ -4,7 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Dataportal - FornPunkt</title>
+  <meta name="og:title" content="Dataportal - FornPunkt">
+  <meta name="description" content="Öppna data och tjänster från FornPunkt.">
+  <meta name="og:description" content="Öppna data och tjänster från FornPunkt.">
+  <link rel="canonical" href="https://fornpunkt.se/data/">
+  <meta name="og:url" content="https://fornpunkt.se/data/">
+
+  <meta name="og:site_name" content="FornPunkt">
+  <meta name="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta name="theme-color" content="#30734C">
+
   <link href="https://fornpunkt.se/static/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fornpunkt.se/static/style.css">
 </head>
@@ -94,7 +106,11 @@
         
       </td>
       <td>API för att hämta FornPunkt data som GeoJSON.</td>
-      <td><div class="badge rounded-pill text-bg-primary">GeoJSON</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">GeoJSON</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -111,7 +127,57 @@
         
       </td>
       <td>API för att hämta FornPunkt data som JSON-LD.</td>
-      <td><div class="badge rounded-pill text-bg-primary">JSON-LD</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">JSON-LD</span>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+          <div><a href="https://fornpunkt.se/data/kmr-reconciliation" class="text-body text-decoration-none"><div class="fw-bold">Kulturmiljöregistret reconciliation API</div></a>
+            
+            <small class="opacity-75">Tjänst</small>
+            
+          </div>
+      </td>
+      <td>
+        
+          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
+        
+      </td>
+      <td>API för att matcha kulturlämningar mot Kulturminnesregistret i OpenRefine.</td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">JSON</span>
+        
+        <span class="badge rounded-pill text-bg-primary">Entity reconciliation API</span>
+        
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+          <div><a href="https://fornpunkt.se/data/geonames-reconciliation" class="text-body text-decoration-none"><div class="fw-bold">GeoNames reconciliation API</div></a>
+            
+            <small class="opacity-75">Tjänst</small>
+            
+          </div>
+      </td>
+      <td>
+        
+          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
+        
+      </td>
+      <td>API för att matcha platser mot GeoNames i OpenRefine.</td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">JSON</span>
+        
+        <span class="badge rounded-pill text-bg-primary">Entity reconciliation API</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -128,7 +194,11 @@
         
       </td>
       <td>API för att registrera information i FornPunkt.</td>
-      <td><div class="badge rounded-pill text-bg-primary">JSON</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">JSON</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -145,7 +215,13 @@
         
       </td>
       <td>Datamängd som beskriver datamängder och API-tjänster som är en del av FornPunkt.</td>
-      <td><div class="badge rounded-pill text-bg-primary">DCAT</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">Turtle</span>
+        
+        <span class="badge rounded-pill text-bg-primary">DCAT</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -162,7 +238,13 @@
         
       </td>
       <td>Index över information i FornPunkt som XML och text-sidkartor.</td>
-      <td><div class="badge rounded-pill text-bg-primary">Sitemaps</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">XML</span>
+        
+        <span class="badge rounded-pill text-bg-primary">Sitemaps</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -179,7 +261,11 @@
         
       </td>
       <td>RSS flöden för lämningar och kommentarer i FornPunkt.</td>
-      <td><div class="badge rounded-pill text-bg-primary">RSS</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">RSS</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -196,7 +282,11 @@
         
       </td>
       <td>SPARQL tjänst för FornPunkts data.</td>
-      <td><div class="badge rounded-pill text-bg-primary">SPARQL</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">SPARQL</span>
+        
+      </td>
     </tr>
     
     <tr>
@@ -213,7 +303,11 @@
         
       </td>
       <td>Tillgång till data i FornPunkt genom Microdata.</td>
-      <td><div class="badge rounded-pill text-bg-primary">Microdata</div></td>
+      <td>
+        
+        <span class="badge rounded-pill text-bg-primary">Microdata</span>
+        
+      </td>
     </tr>
     
     </tbody>
@@ -227,9 +321,9 @@
         <h5>FornPunkt</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="https://fornpunkt.se/dok/om-fornpunkt/" class="nav-link p-0 text-white">Om FornPunkt</a></li>
-          <li class="nav-item mb-2"><a href="mailto:hej@fornpunkt.se"
-              class="nav-link p-0 text-white">Kontakt</a></li>
+          <li class="nav-item mb-2"><a href="mailto:hej@fornpunkt.se" class="nav-link p-0 text-white">Kontakt</a></li>
           <li class="nav-item mb-2"><a href="https://fornpunkt.se/dok/andringslogg/" class="nav-link p-0 text-white">Ändringslogg</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/data/" class="nav-link p-0 text-white">Öppna data</a></li>
         </ul>
       </div>
       <div class="col-6 col-lg-2 mb-3">
@@ -246,6 +340,7 @@
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="https://fornpunkt.se/karta" class="nav-link p-0 text-white">Karta</a></li>
           <li class="nav-item mb-2"><a href="https://fornpunkt.se/taggar" class="nav-link p-0 text-white">Taggar</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/raa/typer" class="nav-link p-0 text-white">Lämningstyper</a></li>
         </ul>
       </div>
       <div class="col-lg-5 offset-lg-1 mb-3">
@@ -276,6 +371,10 @@
     <script src="https://fornpunkt.se/static/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
