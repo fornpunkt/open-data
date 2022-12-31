@@ -83,7 +83,11 @@
         {{ end }}
       </td>
       <td>{{ .description }}</td>
-      <td><div class="badge rounded-pill text-bg-primary">{{ .tags }}</div></td>
+      <td>
+        {{ range split .tags "|" }}
+        <span class="badge rounded-pill text-bg-primary">{{ . }}</span>
+        {{ end }}
+      </td>
     </tr>
     {{ end }}
     </tbody>
