@@ -27,7 +27,7 @@ git clone https://github.com/fornpunkt/open-data.git
 
 ### Index the data
 
-1. Upload/index `data.ttl` into your SPARQL backend.
+1. Upload/index `static/data.ttl` into your SPARQL backend.
 2. Update snowman.yaml to point to your endpoint.
 
 ### Building the site
