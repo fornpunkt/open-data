@@ -2,6 +2,8 @@
 
 {{ define "title" }}{{ .title }}{{ end }}
 
+{{ define "canonical" }}{{ config.Metadata.fornpunkt_root }}/data/{{ .slug }}/{{ end }}
+
 {{ define "content" }}
 <div class="container-lg py-5">
   <div class="float-end">
