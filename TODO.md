@@ -3,10 +3,6 @@ Todos:
  - review use of access url
  - add a direct-download option to doc pages
 
-External todos:
-
- - Setup `.well-known/void` redirect & deploy /datasets
-
 Post launch todos:
  - setup sitemap
  - review page metadata
@@ -15,7 +11,7 @@ Post launch todos:
  - document remaing services
  - setup SHEX validation
  - migrate inline foaf:Agent to new Agent vocabulary
- - setup void:linksets to samlingar.shm.se, wikipedia.org, and kulturarvsdata.se
+ - setup void:linksets to samlingar.shm.se, wikipedia.org, and kulturarvsdata.se, etc
  - document integrations?
  - add our DOI links and citation capabilities
  - add a form to request access to restricted services
