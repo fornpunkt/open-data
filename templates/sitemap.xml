@@ -4,10 +4,9 @@
         <loc>{{ config.Metadata.data_portal_root }}</loc>
         <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
     </url>
-    {{- $url := print config.Metadata.fornpunkt_root "/data/" -}}
     {{ range . }}
     <url>
-        <loc>{{ replace .dataset.String "https://fornpunkt.se/datasets#" $url 1 }}</loc>
+        <loc>{{ replace .dataset.String "https://fornpunkt.se/datasets#" config.Metadata.data_portal_root 1 }}/</loc>
         <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
     </url>
     {{ end }}

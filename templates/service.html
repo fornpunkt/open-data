@@ -2,7 +2,7 @@
 
 {{- define "title" -}}{{ .title }}{{- end -}}
 
-{{- define "canonical" -}}{{ config.Metadata.fornpunkt_root }}/data/{{ .slug }}/{{- end -}}
+{{- define "canonical" -}}{{ config.Metadata.data_portal_root }}{{ .slug }}/{{- end -}}
 
 {{- define "description" -}}{{ .description }}{{- end -}}
 
