@@ -18,6 +18,16 @@
   </div>
   <h1>{{ .title }}</h1>
   {{- safe_html .documentation_fulltext -}}
+ 
+  {{- $related_services := query "related-services.rq" .dataset -}}
+  {{- if $related_services -}}
+    <h2>Relaterade tjänser</h2>
+    <ul>
+      {{- range $related_services -}}
+        <li><a href="{{ replace .service.String "https://fornpunkt.se/datasets#" config.Metadata.data_portal_root 1 }}/">{{ .service_name }}</a></li>
+      {{- end -}}
+    </ul>
+  {{- end -}}
 </div>
 
 {{- if eq .access (uri "http://publications.europa.eu/resource/authority/access-right/RESTRICTED") -}}

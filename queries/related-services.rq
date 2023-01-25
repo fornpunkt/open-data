@@ -1,0 +1,7 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?service ?service_name WHERE {
+  <{{.}}> dct:relation ?service .
+  ?service dct:title ?service_name .
+}
