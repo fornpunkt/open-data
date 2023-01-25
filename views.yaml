@@ -5,3 +5,7 @@ views:
   - output: "{{slug}}/index.html"
     query: "services.rq"
     template: "service.html"
+  - output: "sitemap.xml"
+    query: "index.rq"
+    template: "sitemap.xml"
+    unsafe: true

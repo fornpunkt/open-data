@@ -4,7 +4,6 @@ Todos:
  - add a direct-download option to doc pages
 
 Post launch todos:
- - setup sitemap
  - review page metadata
  - check indexing in Google datasets
  - setup sparql endpoint proxying fornpunkt.se/datasets

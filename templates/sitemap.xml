@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ config.Metadata.data_portal_root }}</loc>
+        <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
+    </url>
+    {{- $url := print config.Metadata.fornpunkt_root "/data/" -}}
+    {{ range . }}
+    <url>
+        <loc>{{ replace .dataset.String "https://fornpunkt.se/datasets#" $url 1 }}</loc>
+        <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
+    </url>
+    {{ end }}
+</urlset>
