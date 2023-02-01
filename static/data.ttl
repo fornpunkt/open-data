@@ -103,8 +103,8 @@
   void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-json-ld-api> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-json-ld-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-json-ld-api/> ;
   dct:relation :fornpunkt-sparql, :fornpunkt-geojson-api .
 
 :fornpunkt-rss a dcat:Distribution ;
@@ -133,8 +133,8 @@
 </ul>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-rss> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-rss/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss/> ;
   dct:conformsTo <https://www.rssboard.org/rss-specification> .
 
 :fornpunkt-geojson-api a dcat:Distribution ;
@@ -165,8 +165,8 @@
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
   dct:relation :fornpunkt-json-ld-api .
 
 :fornpunkt-sitemaps a dcat:Distribution ;
@@ -180,8 +180,8 @@
     <p>Denna tjänst är primärt avsedd för aggregatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor.</p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps/> ;
   dct:conformsTo <https://www.sitemaps.org/> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
 
@@ -199,8 +199,8 @@
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
   void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql/> ;
   dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> ;
   dct:relation :fornpunkt-json-ld-api .
 
@@ -218,8 +218,8 @@
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
   void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
-  dcat:landingPage <https://fornpunkt.se/data/microdata> ;
-  dcat:accessURL <https://fornpunkt.se/data/microdata> ;
+  dcat:landingPage <https://fornpunkt.se/data/microdata/> ;
+  dcat:accessURL <https://fornpunkt.se/data/microdata/> ;
   dct:conformsTo <https://html.spec.whatwg.org/multipage/microdata.html> .
 
 :datakatalog a dcat:Distribution ;
@@ -235,8 +235,8 @@
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
-  dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
-  dcat:accessURL <https://fornpunkt.se/data/datakatalog> ;
+  dcat:landingPage <https://fornpunkt.se/data/datakatalog/> ;
+  dcat:accessURL <https://fornpunkt.se/data/datakatalog/> ;
   dcat:downloadURL <https://fornpunkt.se/datasets> .
 
 :fornpunkt-registrering a dcat:Distribution ;
@@ -250,8 +250,8 @@
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
-  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering> ;
-  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering> .
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering/> .
 
 :geonames-reconciliation a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;
@@ -266,8 +266,8 @@
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
-  dcat:landingPage <https://fornpunkt.se/data/geonames-reconciliation> ;
-  dcat:accessURL <https://fornpunkt.se/data/geonames-reconciliation> ;
+  dcat:landingPage <https://fornpunkt.se/data/geonames-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/geonames-reconciliation/> ;
   dct:relation :kmr-reconciliation .
 
 :kmr-reconciliation a dcat:Distribution ;
@@ -283,8 +283,8 @@
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
   dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
-  dcat:landingPage <https://fornpunkt.se/data/kmr-reconciliation> ;
-  dcat:accessURL <https://fornpunkt.se/data/kmr-reconciliation> ;
+  dcat:landingPage <https://fornpunkt.se/data/kmr-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/kmr-reconciliation/> ;
   dct:relation :geonames-reconciliation .
 
 <https://www.w3.org/TR/vocab-dcat-3/>
