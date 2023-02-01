@@ -19,7 +19,7 @@
   <h1>{{ .title }}</h1>
   {{- safe_html .documentation_fulltext -}}
  
-  {{- $related_services := query "related-services.rq" .dataset -}}
+  {{- $related_services := query "related-services.rq" .distribution -}}
   {{- if $related_services -}}
     <h2>Relaterade tjänser</h2>
     <ul>

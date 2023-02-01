@@ -65,7 +65,7 @@
     <tr>
       <td>
           <div>
-            <a href="{{ replace .dataset.String "https://fornpunkt.se/datasets#" config.Metadata.data_portal_root 1 }}/" class="text-body text-decoration-none"><div class="fw-bold">{{ .title }}</div></a>
+            <a href="{{ replace .distribution.String "https://fornpunkt.se/datasets#" config.Metadata.data_portal_root 1 }}/" class="text-body text-decoration-none"><div class="fw-bold">{{ .title }}</div></a>
             {{- if eq .type.String "http://schema.org/WebAPI" -}}
             <small class="opacity-75">Tjänst</small>
             {{- else -}}

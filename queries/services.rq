@@ -4,7 +4,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX cnt: <http://www.w3.org/2011/content#>
 
 SELECT
-  ?dataset
+  ?distribution
   ?title
   ?access
   ?description
@@ -16,7 +16,7 @@ SELECT
   ?download_url
   (REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", "") AS ?slug)
 WHERE {
-  ?dataset a  dcat:Distribution;
+  ?distribution a  dcat:Distribution;
            dct:title ?title ;
            dct:description ?description ;
            dct:accessRights ?access ;
@@ -26,17 +26,17 @@ WHERE {
   ?documentation cnt:chars ?documentation_fulltext .
 
   OPTIONAL {
-    ?dataset dct:conformsTo ?standard .
+    ?distribution dct:conformsTo ?standard .
     ?standard dct:title ?standard_title .
   }
 
   OPTIONAL {
-    ?dataset dcat:mediaType ?media_type .
+    ?distribution dcat:mediaType ?media_type .
     ?media_type dct:title ?media_type_title .
   }
 
   OPTIONAL {
-    ?dataset dcat:downloadURL ?download_url .
+    ?distribution dcat:downloadURL ?download_url .
   }
 }
 ORDER BY ?title

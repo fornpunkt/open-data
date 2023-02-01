@@ -2,23 +2,23 @@ PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
 SELECT
-  ?dataset
+  ?distribution
   ?type
   ?title
   ?access
   ?description
   (GROUP_CONCAT(?format_or_standard_title ; SEPARATOR="|") AS ?tags)
 WHERE {
-  ?dataset a dcat:Distribution ;
+  ?distribution a dcat:Distribution ;
            dct:title ?title ;
            dct:description ?description ;
            dct:accessRights ?access ;
            dct:type ?type .
 
   OPTIONAL {
-    ?dataset dcat:mediaType|dct:conformsTo ?format_or_standard .
+    ?distribution dcat:mediaType|dct:conformsTo ?format_or_standard .
     ?format_or_standard dct:title ?format_or_standard_title
   }
 }
-GROUP BY ?dataset ?type ?title ?access ?description
+GROUP BY ?distribution ?type ?title ?access ?description
 ORDER BY ?description
