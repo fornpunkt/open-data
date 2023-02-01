@@ -1,7 +1,6 @@
 Todos:
  - review use of formats/standards
  - review use of access url
- - add a direct-download option to doc pages
 
 Post launch todos:
  - review page metadata

@@ -30,6 +30,12 @@
   {{- end -}}
 </div>
 
+{{- if .download_url -}}
+  <div class="d-grid col-6 mx-auto">
+    <a class="btn btn-primary" href="{{ .download_url }}" download="datakatalog.ttl">Ladda ner</a>
+  </div>
+{{- end -}}
+
 {{- if eq .access (uri "http://publications.europa.eu/resource/authority/access-right/RESTRICTED") -}}
 <div class="container-lg">
   <div class="card mb-5 text-bg-primary">

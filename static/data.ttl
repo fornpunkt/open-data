@@ -236,7 +236,8 @@
   dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
   dcat:landingPage <https://fornpunkt.se/data/datakatalog> ;
-  dcat:accessURL <https://fornpunkt.se/data/datakatalog> .
+  dcat:accessURL <https://fornpunkt.se/data/datakatalog> ;
+  dcat:downloadURL <https://fornpunkt.se/datasets> .
 
 :fornpunkt-registrering a dcat:Distribution ;
   dct:type <http://schema.org/WebAPI> ;

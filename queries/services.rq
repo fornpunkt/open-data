@@ -13,6 +13,7 @@ SELECT
   ?media_type
   ?media_type_title
   ?documentation_fulltext
+  ?download_url
   (REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", "") AS ?slug)
 WHERE {
   ?dataset a  dcat:Distribution;
@@ -32,6 +33,10 @@ WHERE {
   OPTIONAL {
     ?dataset dcat:mediaType ?media_type .
     ?media_type dct:title ?media_type_title .
+  }
+
+  OPTIONAL {
+    ?dataset dcat:downloadURL ?download_url .
   }
 }
 ORDER BY ?title
