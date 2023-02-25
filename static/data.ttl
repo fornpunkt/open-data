@@ -61,6 +61,13 @@
     dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
     dct:spatial <http://sws.geonames.org/6295630> ;
     dcat:distribution :geonames-reconciliation ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Wikipedia"@en ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/6295630> ;
+    dcat:distribution :wikipedia-reconciliation ;
   ] .
 
 
@@ -268,6 +275,7 @@
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
   dcat:landingPage <https://fornpunkt.se/data/geonames-reconciliation/> ;
   dcat:accessURL <https://fornpunkt.se/data/geonames-reconciliation/> ;
+  dct:relation :wikipedia-reconciliation ;
   dct:relation :kmr-reconciliation .
 
 :kmr-reconciliation a dcat:Distribution ;
@@ -285,7 +293,26 @@
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
   dcat:landingPage <https://fornpunkt.se/data/kmr-reconciliation/> ;
   dcat:accessURL <https://fornpunkt.se/data/kmr-reconciliation/> ;
+  dct:relation :wikipedia-reconciliation ;
   dct:relation :geonames-reconciliation .
+
+:wikipedia-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Wikipedia reconciliation API"@sv ;
+  dct:description "API för att matcha fritext och identifierare mot Wikipedia i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """Med FornPunkts reconciliation API för Wikipedia kan du matcha fritext och Wikipedia URIer i verktyget <a href="https://openrefine.org/">OpenRefine</a>.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar. Tjänsten är inte publik men fri att använda för alla som avser att använda den för att berika kulturmiljöinformation. Skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a> och beskriv ditt projekt för att få tillgång.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/wikipedia-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/wikipedia-reconciliation/> ;
+  dct:relation :geonames-reconciliation ;
+  dct:relation :kmr-reconciliation .
 
 <https://www.w3.org/TR/vocab-dcat-3/>
   a dct:Standard ;
