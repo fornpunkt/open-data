@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="h-100" lang="sv">
 <head>
@@ -20,10 +19,9 @@
   <link href="https://fornpunkt.se/static/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fornpunkt.se/static/style.css">
 </head>
-<body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body class="d-flex flex-column h-100"><nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="https://fornpunkt.se/data">Dataportal</a>
+    <a class="navbar-brand" href="https://fornpunkt.se/data/">Dataportal</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Öppna/stäng meny">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,10 +32,7 @@
       </div>
     </div>
   </div>
-</nav>
-    
-
-<div class="bg-primary" style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg);">
+</nav><div class="bg-primary" style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg);">
   <div class="container-lg position-relative text-center text-white py-5">
     <h1>Data och tjänster från FornPunkt.se</h1>
   </div>
@@ -51,7 +46,7 @@
         <div class="card-body">
           <h2 class="card-title h5">GeoJSON</h2>
           <p class="card-text">Lämningar registrerade i FornPunkt som GeoJSON för GIS-verktyg och webbtjänster.</p>
-          <a href="https://fornpunkt.se/data/fornpunkt-geojson-api" class="btn btn-secondary">Läs mer</a>
+          <a href="https://fornpunkt.se/data/fornpunkt-geojson-api/" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -61,7 +56,7 @@
         <div class="card-body">
           <h2 class="card-title h5">JSON-LD</h2>
           <p class="card-text">FornPunkts data som länkade data. JSON-LD är FornPunkts mest detaljrika format.</p>
-          <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api" class="btn btn-secondary">Läs mer</a>
+          <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api/" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -71,7 +66,7 @@
         <div class="card-body">
           <h2 class="card-title h5">Registrerings API</h2>
           <p class="card-text">Bygg integrationer som kan registrera och berika information direkt i FornPunkt.</p>
-          <a href="https://fornpunkt.se/data/fornpunkt-registrering" class="btn btn-secondary">Läs mer</a>
+          <a href="https://fornpunkt.se/data/fornpunkt-registrering/" class="btn btn-secondary">Läs mer</a>
         </div>
       </div>
     </div>
@@ -89,232 +84,97 @@
           <th>Taggar</th>
         </tr>
       </thead>
-      <tbody>
-
-    
-    <tr>
+      <tbody><tr>
       <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-geojson-api" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt GeoJSON API</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-geojson-api/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt GeoJSON API</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-primary">Öppen</div></td>
       <td>API för att hämta FornPunkt data som GeoJSON.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">GeoJSON</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">GeoJSON</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt JSON-LD API</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-json-ld-api" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt JSON-LD API</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-primary">Öppen</div></td>
       <td>API för att hämta FornPunkt data som JSON-LD.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">JSON-LD</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/wikipedia-reconciliation/" class="text-body text-decoration-none"><div class="fw-bold">Wikipedia reconciliation API</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
+      <td>API för att matcha fritext och identifierare mot Wikipedia i OpenRefine.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">JSON</span><span class="badge rounded-pill text-bg-primary me-1">Entity reconciliation API</span></td>
+    </tr><tr>
       <td>
-          <div><a href="https://fornpunkt.se/data/kmr-reconciliation" class="text-body text-decoration-none"><div class="fw-bold">Kulturmiljöregistret reconciliation API</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
+          <div>
+            <a href="https://fornpunkt.se/data/kmr-reconciliation/" class="text-body text-decoration-none"><div class="fw-bold">Kulturmiljöregistret reconciliation API</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
       <td>API för att matcha kulturlämningar mot Kulturminnesregistret i OpenRefine.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">JSON</span><span class="badge rounded-pill text-bg-primary me-1">Entity reconciliation API</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">JSON</span>
-        
-        <span class="badge rounded-pill text-bg-primary">Entity reconciliation API</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/geonames-reconciliation/" class="text-body text-decoration-none"><div class="fw-bold">GeoNames reconciliation API</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/geonames-reconciliation" class="text-body text-decoration-none"><div class="fw-bold">GeoNames reconciliation API</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
       <td>API för att matcha platser mot GeoNames i OpenRefine.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">JSON</span><span class="badge rounded-pill text-bg-primary me-1">Entity reconciliation API</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">JSON</span>
-        
-        <span class="badge rounded-pill text-bg-primary">Entity reconciliation API</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-registrering/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt registrerings API (kommer snart)</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-registrering" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt registrerings API (kommer snart)</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
       <td>API för att registrera information i FornPunkt.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">JSON</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">JSON</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/datakatalog/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt datakatalog</div></a><small class="opacity-75">Nerladdning</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/datakatalog" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt datakatalog</div></a>
-            
-            <small class="opacity-75">Nerladdning</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-primary">Öppen</div></td>
       <td>Datamängd som beskriver datamängder och API-tjänster som är en del av FornPunkt.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">Turtle</span><span class="badge rounded-pill text-bg-primary me-1">DCAT</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">Turtle</span>
-        
-        <span class="badge rounded-pill text-bg-primary">DCAT</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-sitemaps/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt Sitemaps</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-sitemaps" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt Sitemaps</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
       <td>Index över information i FornPunkt som XML och text-sidkartor.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">XML</span><span class="badge rounded-pill text-bg-primary me-1">Sitemaps</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">XML</span>
-        
-        <span class="badge rounded-pill text-bg-primary">Sitemaps</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-rss/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt RSS flöde</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-rss" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt RSS flöde</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-primary">Öppen</div></td>
       <td>RSS flöden för lämningar och kommentarer i FornPunkt.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">RSS</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">RSS</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/fornpunkt-sparql/" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt SPARQL</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/fornpunkt-sparql" class="text-body text-decoration-none"><div class="fw-bold">FornPunkt SPARQL</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-secondary">Begränsad</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-secondary">Begränsad</div></td>
       <td>SPARQL tjänst för FornPunkts data.</td>
+      <td><span class="badge rounded-pill text-bg-primary me-1">SPARQL</span></td>
+    </tr><tr>
       <td>
-        
-        <span class="badge rounded-pill text-bg-primary">SPARQL</span>
-        
+          <div>
+            <a href="https://fornpunkt.se/data/microdata/" class="text-body text-decoration-none"><div class="fw-bold">Microdata</div></a><small class="opacity-75">Tjänst</small></div>
       </td>
-    </tr>
-    
-    <tr>
-      <td>
-          <div><a href="https://fornpunkt.se/data/microdata" class="text-body text-decoration-none"><div class="fw-bold">Microdata</div></a>
-            
-            <small class="opacity-75">Tjänst</small>
-            
-          </div>
-      </td>
-      <td>
-        
-          <div class="badge rounded-pill text-bg-primary">Öppen</div>
-        
-      </td>
+      <td><div class="badge rounded-pill text-bg-primary">Öppen</div></td>
       <td>Tillgång till data i FornPunkt genom Microdata.</td>
-      <td>
-        
-        <span class="badge rounded-pill text-bg-primary">Microdata</span>
-        
-      </td>
-    </tr>
-    
-    </tbody>
+      <td><span class="badge rounded-pill text-bg-primary me-1">Microdata</span></td>
+    </tr></tbody>
 </table>
-</div>
-
-    <div style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg); transform: scale(-1);" class="bg-primary d-print-none mt-auto py-5">
+</div><div style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg); transform: scale(-1);" class="bg-primary d-print-none mt-auto py-5">
   <footer class="text-white container" style="transform: scale(-1);">
     <div class="row">
       <div class="col-6 col-lg-2 mb-3">
@@ -367,16 +227,6 @@
       </ul>
     </div>
   </footer>
-</div>
-    <script src="https://fornpunkt.se/static/bootstrap.min.js"></script>
+</div><script src="https://fornpunkt.se/static/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
