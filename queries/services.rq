@@ -14,7 +14,7 @@ SELECT
   ?media_type_title
   ?documentation_fulltext
   ?download_url
-  (REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", "") AS ?slug)
+  (REPLACE(REPLACE(STR(?landing_page), "https://fornpunkt.se/data/", ""), "/", "") AS ?slug)
 WHERE {
   ?distribution a  dcat:Distribution;
            dct:title ?title ;
