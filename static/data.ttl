@@ -78,7 +78,7 @@
   dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan antingen hämtas ifrån en resurs-URI(taggar/lämningar/kommentarer/annoteringar/observationstyper) eller per användare(lämningar).</p>
+    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan hämtas ifrån alla FornPunkts resurs-URIer (taggar/lämningar/kommentarer/annoteringar/observationstyper).</p>
 
 <h2>Per resurs</h2>
 
@@ -145,7 +145,7 @@
   dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>Du kan hämta lämningar som GeoJSON för enskilda lämningar eller för lämningar inom ett geografiskt område och per användare.
+    cnt:chars """<p>Du kan hämta lämningar som GeoJSON för enskilda lämningar eller för lämningar inom ett geografiskt område.
 
     <h2>Enskilda lämningar</h2>
 
