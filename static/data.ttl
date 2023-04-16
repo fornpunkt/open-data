@@ -39,6 +39,7 @@
     dcat:distribution :fornpunkt-sparql ;
     dcat:distribution :microdata ;
     dcat:distribution :fornpunkt-registrering ;
+    dcat:distribution :fornpunkt-export-api ;
   ],
   [
     a dcat:Dataset ;
@@ -96,13 +97,7 @@
 <ul>
     <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld</a></li>
     <li><a href="https://fornpunkt.se/tagg/fossil-akermark.jsonld" target="_blank">https://fornpunkt.se/tagg/fossil-akermark.jsonld</a></li>
-</ul>
-
-<h2>Per användare</h2>
-
-<p>För att hämta lämningar ifrån ens egna användare behöver man en åtkomstnyckel:</p>
-
-    <p><code>curl -H "Authorization: Token <access_token>" https://fornpunkt.se/api/lamnings/export?format=json-ld</code></p>""" ;
+</ul>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:feature <http://www.w3.org/ns/formats/JSON-LD>;
@@ -162,18 +157,94 @@
 
     <p>För att hämta alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer.</p>
 
-    <p><code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code></p>
-
-    <h2>Per användare</h2>
-
-    <p>För att hämta lämningar ifrån ens egna användare behöver man en åtkomstnyckel:</p>
-
-    <p><code>curl -H "Authorization: Token <access_token>" https://fornpunkt.se/api/lamnings/export?format=geojson</code></p>""" ;
+    <p><code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code></p>""" ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
+  dct:relation :fornpunkt-json-ld-api .
+
+:fornpunkt-export-api a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Export API"@sv ;
+  dct:description "API göra exporter av stora mängder information ur FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med Export tjänsten kan man exportera alla typer av data som förekommer i FornPunkt antingen på användarnivå (för ens egna användare) eller på "globalnivå". Alla exporter kräver åtkomstnycklar och för globala exporter behöver man rollen "exportör".</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data typ</th>
+            <th>Export nivå</th>
+            <th>Format</th>
+            <th>Export URI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lämning</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span><span class="badge rounded-pill text-bg-primary me-1">TSV</span><span class="badge rounded-pill text-bg-primary me-1">GeoJSON</span></td>
+            <td><code>lamnings</code></td>
+        </tr>
+        <tr>
+            <td>Tagg</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>tags</code></td>
+        </tr>
+        <tr>
+            <td>Konto</td>
+            <td>användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>accounts</code></td>
+        </tr>
+        <tr>
+            <td>Kommentar</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>comments</code></td>
+        </tr>
+        <tr>
+            <td>Wikipedia annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>wikipedia-annotations</code></td>
+        </tr>
+        <tr>
+            <td>Generell annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>generic-annotations</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information.</p>
+
+<h2>Exempel</h2>
+
+<p>Notera att båda parametrarna <code>scope</code> och <code>format</code> faller tillbka till lämpliga värden om man anger icke tillåtna sådana.</p>
+
+<p>Exportera alla lämningar som TSV:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/lamnings&scope=all&format=tsv</code></p>
+
+<p>Exportera kontoinformation för den aktuella användaren som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/accounts</code></p>
+
+<p>Exportera alla kommentarer som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/comments&scope=all</code></p>
+""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json>, <https://www.iana.org/assignments/media-types/application/ld+json>, <https://www.iana.org/assignments/media-types/text/tsv> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-export-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-export-api/> ;
   dct:relation :fornpunkt-json-ld-api .
 
 :fornpunkt-sitemaps a dcat:Distribution ;
