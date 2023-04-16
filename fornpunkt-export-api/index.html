@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>GeoNames reconciliation API</title>
-  <meta name="og:title" content="GeoNames reconciliation API">
-  <meta name="description" content="API för att matcha platser mot GeoNames i OpenRefine.">
-  <meta name="og:description" content="API för att matcha platser mot GeoNames i OpenRefine.">
-  <link rel="canonical" href="https://fornpunkt.se/data/geonames-reconciliation/">
-  <meta name="og:url" content="https://fornpunkt.se/data/geonames-reconciliation/">
+  <title>FornPunkt Export API</title>
+  <meta name="og:title" content="FornPunkt Export API">
+  <meta name="description" content="API göra exporter av stora mängder information ur FornPunkt.">
+  <meta name="og:description" content="API göra exporter av stora mängder information ur FornPunkt.">
+  <link rel="canonical" href="https://fornpunkt.se/data/fornpunkt-export-api/">
+  <meta name="og:url" content="https://fornpunkt.se/data/fornpunkt-export-api/">
 
   <meta name="og:site_name" content="FornPunkt">
   <meta name="og:type" content="website">
@@ -33,18 +33,77 @@
     </div>
   </div>
 </nav><div class="container-lg py-5">
-  <div class="float-end"><a class="btn btn-primary btn-sm mt-2" href="https://reconciliation-api.github.io/specs/0.2/">Entity reconciliation API</a><a class="btn btn-primary btn-sm mt-2 ms-1" href="https://www.iana.org/assignments/media-types/application/json">JSON</a></div>
-  <h1>GeoNames reconciliation API</h1><p>Med FornPunkts GeoNames reconciliation API kan du matcha platser i fritext mot GeoNames auktoriteter i verktyget <a href="https://openrefine.org/">OpenRefine</a>.</p>
+  <div class="float-end"><a class="btn btn-primary btn-sm mt-2 ms-1" href="https://www.iana.org/assignments/media-types/application/ld&#43;json">JSON-LD</a></div>
+  <h1>FornPunkt Export API</h1><p>Med Export tjänsten kan man exportera alla typer av data som förekommer i FornPunkt antingen på användarnivå (för ens egna användare) eller på "globalnivå". Alla exporter kräver åtkomstnycklar och för globala exporter behöver man rollen "exportör".</p>
 
-    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar. Tjänsten är inte publik men fri att använda för alla som avser att använda den för att berika kulturmiljöinformation. Skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a> och beskriv ditt projekt för att få tillgång.</p><h2>Relaterade tjänser</h2>
-    <ul><li><a href="https://fornpunkt.se/data/wikipedia-reconciliation/">Wikipedia reconciliation API</a></li><li><a href="https://fornpunkt.se/data/kmr-reconciliation/">Kulturmiljöregistret reconciliation API</a></li></ul></div><div class="container-lg">
-  <div class="card mb-5 text-bg-primary">
-    <div class="card-body">
-        <h2 class="card-title h5">Begränsad tillgänglighet</h2>
-        <p class="card-text">Åtkomsten till denna tjänst är begränsad. Vill du ha åtkomst får du gärna kontakta oss. Begränsningen kan bero på att den är experimentell, dyr i drift, kan massredigera information eller primärt tillgängliggör information ifrån en tredjepart.</p>
-    </div>
-  </div>
-</div><div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data typ</th>
+            <th>Export nivå</th>
+            <th>Format</th>
+            <th>Export URI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lämning</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span><span class="badge rounded-pill text-bg-primary me-1">TSV</span><span class="badge rounded-pill text-bg-primary me-1">GeoJSON</span></td>
+            <td><code>lamnings</code></td>
+        </tr>
+        <tr>
+            <td>Tagg</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>tags</code></td>
+        </tr>
+        <tr>
+            <td>Konto</td>
+            <td>användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>accounts</code></td>
+        </tr>
+        <tr>
+            <td>Kommentar</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>comments</code></td>
+        </tr>
+        <tr>
+            <td>Wikipedia annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>wikipedia-annotations</code></td>
+        </tr>
+        <tr>
+            <td>Generell annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>generic-annotations</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information.</p>
+
+<h2>Exempel</h2>
+
+<p>Notera att båda parametrarna <code>scope</code> och <code>format</code> faller tillbka till lämpliga värden om man anger icke tillåtna sådana.</p>
+
+<p>Exportera alla lämningar som TSV:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/lamnings&scope=all&format=tsv</code></p>
+
+<p>Exportera kontoinformation för den aktuella användaren som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/accounts</code></p>
+
+<p>Exportera alla kommentarer som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/comments&scope=all</code></p>
+<h2>Relaterade tjänser</h2>
+    <ul><li><a href="https://fornpunkt.se/data/fornpunkt-json-ld-api/">FornPunkt JSON-LD API</a></li></ul></div><div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
   <div class="text-white container">
     <p class="m-0">Vi jobbar ständigt på att utveckla existerande och nya tjänster för att kulturarvsinformation ska bli så tillgänglig som möjligt. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
   </div>

@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fornpunkt.se/data/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-geojson-api/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-json-ld-api/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/wikipedia-reconciliation/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/kmr-reconciliation/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/geonames-reconciliation/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-registrering/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
+    </url>
+    <url>
+        <loc>https://fornpunkt.se/data/fornpunkt-export-api/</loc>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/datakatalog/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-sitemaps/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-rss/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/fornpunkt-sparql/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
     <url>
         <loc>https://fornpunkt.se/data/microdata/</loc>
-        <lastmod>2023-02-26</lastmod>
+        <lastmod>2023-04-16</lastmod>
     </url>
 </urlset>
