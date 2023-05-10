@@ -1,0 +1,9 @@
+name: build
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: wget https://github.com/oxigraph/oxigraph/releases/download/v0.3.16/oxigraph_server_v0.3.16_x86_64_linux_gnu -O oxigraph
+      - run: wget https://github.com/glaciers-in-archives/snowman/releases/download/0.4.0/snowman-linux-amd64 -O snowman
