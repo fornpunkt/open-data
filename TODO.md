@@ -1,9 +1,5 @@
 Todos:
- - review use of formats/standards
- - review use of access url
-
-Post launch todos:
- - review page metadata
+ - swap internal deployment CI to use Github Actions output
  - check indexing in Google datasets
  - setup sparql endpoint proxying fornpunkt.se/datasets
  - document remaing services

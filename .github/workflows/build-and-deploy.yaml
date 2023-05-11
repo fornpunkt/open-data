@@ -1,0 +1,39 @@
+name: build-and-deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      OXIGRAPH_BINARY: https://github.com/oxigraph/oxigraph/releases/download/v0.3.16/oxigraph_server_v0.3.16_x86_64_linux_gnu
+      SNOWMAN_BINARY: https://github.com/glaciers-in-archives/snowman/releases/download/0.4.0/snowman-linux-amd64
+      BUILD_OUTPUT_FOLDER: site
+      TARGET_BRANCH: deploy
+      CI_COMMIT_MESSAGE: Continuous Integration Build
+      CI_COMMIT_AUTHOR: Continuous Integration
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Oxigraph
+        run: wget "${{env.OXIGRAPH_BINARY}}" -O oxigraph && chmod +x oxigraph
+      - name: Download Snowman
+        run: wget "${{env.SNOWMAN_BINARY}}" -O snowman && chmod +x snowman
+      - name: Load RDF 
+        run: ./oxigraph load --file static/data.ttl --location datastore
+      - name: Run SPARQL server and build site
+        run: ./oxigraph serve --location datastore & sleep 4 && ./snowman build --timeit
+      - name: Commit results to deployment branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "abbe98@users.noreply.github.com"
+          rm -rf .gitignore
+          git add ${{env.BUILD_OUTPUT_FOLDER}}/*
+          git stash push -- ${{env.BUILD_OUTPUT_FOLDER}}/*
+          git checkout --orphan ${{env.TARGET_BRANCH}}
+          git stash pop
+          git rm --cached -r .
+          git add ${{env.BUILD_OUTPUT_FOLDER}}/*
+          git clean -fd
+          cp -r ${{env.BUILD_OUTPUT_FOLDER}}/* ./ && rm -rf site
+          git add .
+          git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push --set-upstream origin deploy --force

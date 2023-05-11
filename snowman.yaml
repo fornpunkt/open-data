@@ -1,5 +1,5 @@
 sparql_client:
-  endpoint: "http://127.0.0.1:3030/dataportal"
+  endpoint: "http://127.0.0.1:7878/query"
 metadata:
   fornpunkt_root: "https://fornpunkt.se"
   data_portal_root: "https://fornpunkt.se/data/"
