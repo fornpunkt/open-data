@@ -222,7 +222,7 @@
     </tbody>
 </table>
 
-<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information. Om du vill exportera mer än 5000 poster så behöver du ange en <code>page</page> parameter i URLen. Pagineringsinformation återfinns alltid i svarets <code>Link</code> HTTP header.</p>
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information. Om du vill exportera mer än 5000 poster så behöver du ange en <code>page</code> parameter i URLen. Pagineringsinformation återfinns alltid i svarets <code>Link</code> HTTP header.</p>
 
 <h2>Exempel</h2>
 
