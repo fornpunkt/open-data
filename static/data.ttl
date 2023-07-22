@@ -222,7 +222,7 @@
     </tbody>
 </table>
 
-<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information.</p>
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information. Om du vill exportera mer än 5000 poster så behöver du ange en <code>page</page> parameter i URLen. Pagineringsinformation återfinns alltid i svarets <code>Link</code> HTTP header.</p>
 
 <h2>Exempel</h2>
 
@@ -239,6 +239,10 @@
 <p>Exportera alla kommentarer som JSON-LD:</p>
 
 <p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/comments&scope=all</code></p>
+
+<p>Exportera generella annoteringar från 5001-10000 som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/generic-annotations?page=2</code></p>
 """ ;
   ] ;
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
