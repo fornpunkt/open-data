@@ -273,9 +273,15 @@
   dct:description "SPARQL tjänst för FornPunkts data."@sv ;
   schema:subjectOf [
     a cnt:ContentAsText ;
-    cnt:chars """<p>FornPunkts SPARQL tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsedd för dataanalys och visualisering. Tillgången till tjänsten är begränsad men <a href="https://github.com/fornpunkt/sparql">SPARQL-verktygen är öppen källkod</a> och man kan själv <a href="https://fornpunkt.se/data/fornpunkt-json-ld-api">hämta RDF data med JSON-LD APIet</a>.</p>
-    
-    <p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>""" ;
+    cnt:chars """<p>FornPunkts SPARQL-tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsedd för dataanalys och visualisering. Informationen i SPARQL-tjänsten uppdateras en gång i veckan och har inte lägre krav på upptider än FornPunkts övriga tjänster.</p>
+
+<p>Tjänsten har en svarstidsbegränsning satt till 20 sekunder.</p>
+
+<p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>
+
+<h2>Visualiseringsgränssnitt</h2>
+
+<p>FornPunkts SPARQL-tjänst har ett gränssnitt med exempel och visualiseringsfunktioner på <a href="https://sparql.fornpunkt.se">sparql.fornpunkt.se</a>.</p>""" ;
   ] ;
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
@@ -284,6 +290,7 @@
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql/> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql/> ;
   dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> ;
+  void:sparqlEndpoint <https://sparql.fornpunkt.se/query> ;
   dct:relation :fornpunkt-json-ld-api .
 
 :microdata a dcat:Distribution ;
