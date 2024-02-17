@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="h-100" lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FornPunkt Export API</title>
+  <meta name="og:title" content="FornPunkt Export API">
+  <meta name="description" content="API göra exporter av stora mängder information ur FornPunkt.">
+  <meta name="og:description" content="API göra exporter av stora mängder information ur FornPunkt.">
+  <link rel="canonical" href="https://fornpunkt.se/data/fornpunkt-export-api/">
+  <meta name="og:url" content="https://fornpunkt.se/data/fornpunkt-export-api/">
+
+  <meta name="og:site_name" content="FornPunkt">
+  <meta name="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta name="theme-color" content="#30734C">
+
+  <link href="https://fornpunkt.se/static/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fornpunkt.se/static/style.css">
+</head>
+<body class="d-flex flex-column h-100"><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://fornpunkt.se/data/">Dataportal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Öppna/stäng meny">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+      <ul class="navbar-nav"></ul>
+      <div>
+        <a class="btn btn-sm btn-primary fw-bold" href="https://fornpunkt.se">Till FornPunkt</a>
+      </div>
+    </div>
+  </div>
+</nav><div class="container-lg py-5">
+  <div class="float-end"><a class="btn btn-primary btn-sm mt-2 ms-1" href="https://www.iana.org/assignments/media-types/application/ld&#43;json">JSON-LD</a></div>
+  <h1>FornPunkt Export API</h1><p>Med Export tjänsten kan man exportera alla typer av data som förekommer i FornPunkt antingen på användarnivå (för ens egna användare) eller på "globalnivå". Alla exporter kräver åtkomstnycklar och för globala exporter behöver man rollen "exportör".</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data typ</th>
+            <th>Export nivå</th>
+            <th>Format</th>
+            <th>Export URI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lämning</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span><span class="badge rounded-pill text-bg-primary me-1">TSV</span><span class="badge rounded-pill text-bg-primary me-1">GeoJSON</span></td>
+            <td><code>lamnings</code></td>
+        </tr>
+        <tr>
+            <td>Tagg</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>tags</code></td>
+        </tr>
+        <tr>
+            <td>Konto</td>
+            <td>användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>accounts</code></td>
+        </tr>
+        <tr>
+            <td>Kommentar</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>comments</code></td>
+        </tr>
+        <tr>
+            <td>Wikipedia annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>wikipedia-annotations</code></td>
+        </tr>
+        <tr>
+            <td>Generell annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>generic-annotations</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information. Om du vill exportera mer än 5000 poster så behöver du ange en <code>page</code> parameter i URLen. Pagineringsinformation återfinns alltid i svarets <code>Link</code> HTTP header.</p>
+
+<h2>Exempel</h2>
+
+<p>Notera att båda parametrarna <code>scope</code> och <code>format</code> faller tillbka till lämpliga värden om man anger icke tillåtna sådana.</p>
+
+<p>Exportera alla lämningar som TSV:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/lamnings&scope=all&format=tsv</code></p>
+
+<p>Exportera kontoinformation för den aktuella användaren som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/accounts</code></p>
+
+<p>Exportera alla kommentarer som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/comments&scope=all</code></p>
+
+<p>Exportera generella annoteringar från 5001-10000 som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/generic-annotations?page=2</code></p>
+<h2>Relaterade tjänser</h2>
+    <ul><li><a href="https://fornpunkt.se/data/fornpunkt-json-ld-api/">FornPunkt JSON-LD API</a></li></ul></div><div style="background-color: #30638E;" class="d-print-none mt-auto text-center py-5">
+  <div class="text-white container">
+    <p class="m-0">Vi jobbar ständigt på att utveckla existerande och nya tjänster för att kulturarvsinformation ska bli så tillgänglig som möjligt. <strong>Har du önskemål får du gärna höra av dig!</strong></p>
+  </div>
+</div><div style="background: 0/cover url(https://fornpunkt.se/static/fp-contours.svg); transform: scale(-1);" class="bg-primary d-print-none mt-auto py-5">
+  <footer class="text-white container" style="transform: scale(-1);">
+    <div class="row">
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>FornPunkt</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/dok/om-fornpunkt/" class="nav-link p-0 text-white">Om FornPunkt</a></li>
+          <li class="nav-item mb-2"><a href="mailto:hej@fornpunkt.se" class="nav-link p-0 text-white">Kontakt</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/dok/andringslogg/" class="nav-link p-0 text-white">Ändringslogg</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/data/" class="nav-link p-0 text-white">Öppna data</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Integrationer</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://addons.mozilla.org/sv-SE/firefox/addon/fornpunkt/"
+              class="nav-link p-0 text-white">Fornsök</a></li>
+          <li class="nav-item mb-2"><a href="https://commons.wikimedia.org/wiki/User:Abbe98/FornPunkt"
+              class="nav-link p-0 text-white">Wikimedia Commons</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Utforska</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/karta" class="nav-link p-0 text-white">Karta</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/taggar" class="nav-link p-0 text-white">Taggar</a></li>
+          <li class="nav-item mb-2"><a href="https://fornpunkt.se/raa/typer" class="nav-link p-0 text-white">Lämningstyper</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-5 offset-lg-1 mb-3">
+        <h5>Säg hej!</h5>
+        <p>Vill du ha support? sammarbeta? eller bara säga hej? Hör av dig!</p>
+        <div class="text-center">
+          <a class="h2 text-reset text-decoration-none" href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 mt-4">
+
+      <ul class="list-unstyled d-flex m-0">
+        <li class="ms-3"><a class="link-light" href="https://github.com/fornpunkt/"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg></svg></a></li>
+        <li class="ms-3"><a class="link-light" href="https://www.youtube.com/channel/UC8xwAilU1c9MA_Jcr_y6W5g"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+            </svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div><script src="https://fornpunkt.se/static/bootstrap.min.js"></script>
+</body>
+</html>

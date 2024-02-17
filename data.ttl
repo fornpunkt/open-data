@@ -1,0 +1,473 @@
+@prefix dcat:      <http://www.w3.org/ns/dcat#> .
+@prefix dct:       <http://purl.org/dc/terms/> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix void:      <http://rdfs.org/ns/void#> .
+@prefix vcard:     <http://www.w3.org/2006/vcard/ns#> .
+@prefix cnt:       <http://www.w3.org/2011/content#> .
+@prefix schema:    <http://schema.org/> .
+
+@prefix :          <https://fornpunkt.se/datasets#> .
+
+:VoIDDescription a void:DatasetDescription ;
+    dct:title "VoID description for the FornPunkt Datasets"@en ;
+    dct:title "VoID beskrivning för FornPunks dataset"@sv ;
+    foaf:primaryTopic :fornpunkt-json-ld-api, :fornpunkt-sparql, :microdata .
+
+:Catalog a dcat:Catalog ;
+  dct:spatial <http://sws.geonames.org/2661886> ;
+  dct:title "FornPunkt open data catalog"@en;
+  dct:title "FornPunkts öppna data katalog"@sv;
+  dct:description "Metakatalog över FornPunks öppna data"@sv ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+  dcat:contactPoint <mailto:hej@fornsok.se> ;
+  dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:publisher [
+          a foaf:Agent ;
+          foaf:name "FornPunkt" ;
+          foaf:homepage <https://fornpunkt.se/> ;
+          vcard:hasEmail <mailto:hej@fornpunkt.se> ;
+  ] ;
+  dcat:dataset [
+    a dcat:Dataset ;
+    dct:title "FornPunkt"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution :fornpunkt-json-ld-api ;
+    dcat:distribution :fornpunkt-rss ;
+    dcat:distribution :fornpunkt-geojson-api ;
+    dcat:distribution :fornpunkt-sitemaps ;
+    dcat:distribution :fornpunkt-sparql ;
+    dcat:distribution :microdata ;
+    dcat:distribution :fornpunkt-registrering ;
+    dcat:distribution :fornpunkt-export-api ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Tjänste och datakatalog ifrån FornPunkt"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution :datakatalog ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Kulturmiljöregistret"@sv ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/2661886> ;
+    dcat:distribution :microdata ;
+    dcat:distribution :kmr-reconciliation ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "GeoNames"@en ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
+    dct:spatial <http://sws.geonames.org/6295630> ;
+    dcat:distribution :geonames-reconciliation ;
+  ],
+  [
+    a dcat:Dataset ;
+    dct:title "Wikipedia"@en ;
+    dct:language <http://id.loc.gov/vocabulary/iso639-1/sv> ;
+    dct:spatial <http://sws.geonames.org/6295630> ;
+    dcat:distribution :wikipedia-reconciliation ;
+  ] .
+
+
+:fornpunkt-json-ld-api a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt JSON-LD API"@sv ;
+  dct:description "API för att hämta FornPunkt data som JSON-LD."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>JSON-LD är FornPunkts mest detaljrika format som all FornPunkts offentliga data representeras i. JSON-LD kan hämtas ifrån alla FornPunkts resurs-URIer (taggar/lämningar/kommentarer/annoteringar/observationstyper).</p>
+
+<h2>Per resurs</h2>
+
+<p>För att hämta data från en resurs kan man sätta <code>Accept</code>-headern till <code>application/ld+json</code>.</p>
+
+<ul>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/lamning/ynB2enR</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/tagg/fossil-akermark</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e#kommentarer-gRn6Vnd</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e</code></li>
+    <li><code>curl -H "Accept: application/ld+json" https://fornpunkt.se/observationstyper</code></li>
+</ul>
+
+<p>För snabbåtkomst i webbläsaren kan man också använda sig av format-prefixet <code>.jsonld</code> på resurs-URIn ifråga detta fungerar dock inte på URIer som använder URI-fragment:</p>
+
+<ul>
+    <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.jsonld</a></li>
+    <li><a href="https://fornpunkt.se/tagg/fossil-akermark.jsonld" target="_blank">https://fornpunkt.se/tagg/fossil-akermark.jsonld</a></li>
+</ul>""" ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:feature <http://www.w3.org/ns/formats/JSON-LD>;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/ld+json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-json-ld-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-json-ld-api/> ;
+  dct:relation :fornpunkt-sparql, :fornpunkt-geojson-api .
+
+:fornpunkt-rss a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt RSS flöde"@sv ;
+  dct:description "RSS flöden för lämningar och kommentarer i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Genom FornPunkts RSS-flöden kan man hämsta de senast registrerade lämningarna per-tagg eller de senaste kommentarerna på en given lämning.</p>
+
+<h2>Nya lämningar</h2>
+
+<p>Flödet innehåller en lämnings beskrivning, titel, registrerare och URI. En taggs RSS-flöde hittas genom att lägga till suffixet <code>.rss</code> på en taggs URI/URL.</p>
+
+<ul>
+    <li><a href="https://fornpunkt.se/tagg/bro.rss" target="_blank">https://fornpunkt.se/tagg/bro.rss</a></li>
+</ul>
+
+<h2>Kommentarer</h2>
+
+<p>Kommentarer exponeras i RSS-flöden på lämnings nivå och hittas genom att lägga till suffixet <code>.rss</code> på en lämnings URI/URL.</p>
+
+<ul>
+    <li><a href="https://fornpunkt.se/lamning/6jpqonp.rss" target="_blank">https://fornpunkt.se/lamning/6jpqonp.rss</a></li>
+    <li><a href="https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.rss" target="_blank">https://fornpunkt.se/raa/lamning/2bafe6b7-b1de-482f-906b-52c6efd98f1e.rss</a></li>
+</ul>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-rss/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-rss/> ;
+  dct:conformsTo <https://www.rssboard.org/rss-specification> .
+
+:fornpunkt-geojson-api a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt GeoJSON API"@sv ;
+  dct:description "API för att hämta FornPunkt data som GeoJSON."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Du kan hämta lämningar som GeoJSON för enskilda lämningar eller för lämningar inom ett geografiskt område.
+
+    <h2>Enskilda lämningar</h2>
+
+    <p>För en enskild lämning lägg till suffixet <code>.geojson</code> till en lämnings-URI, för att hämta GeoJSON.</p>
+
+    <p><code>curl https://fornpunkt.se/lamning/KLVaVNm.geojson</code></p>
+
+    <h2>Lämningar inom ett geografiskt område</h2>
+
+    <p>För att hämta alla lämningar inom ett geografiskt område så kan man använda sig av följande URL. Notera att man inte kan efterfråga väldigt stora områden utan att man vid sådana behov bör använda sig av andra APIer.</p>
+
+    <p><code>curl https://fornpunkt.se/api/lamnings/bbox?south=57.54&east=18.51&north=57.69&west=18.15</code></p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-geojson-api/> ;
+  dct:relation :fornpunkt-json-ld-api .
+
+:fornpunkt-export-api a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Export API"@sv ;
+  dct:description "API göra exporter av stora mängder information ur FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med Export tjänsten kan man exportera alla typer av data som förekommer i FornPunkt antingen på användarnivå (för ens egna användare) eller på "globalnivå". Alla exporter kräver åtkomstnycklar och för globala exporter behöver man rollen "exportör".</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data typ</th>
+            <th>Export nivå</th>
+            <th>Format</th>
+            <th>Export URI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Lämning</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span><span class="badge rounded-pill text-bg-primary me-1">TSV</span><span class="badge rounded-pill text-bg-primary me-1">GeoJSON</span></td>
+            <td><code>lamnings</code></td>
+        </tr>
+        <tr>
+            <td>Tagg</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>tags</code></td>
+        </tr>
+        <tr>
+            <td>Konto</td>
+            <td>användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>accounts</code></td>
+        </tr>
+        <tr>
+            <td>Kommentar</td>
+            <td>global/användare</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>comments</code></td>
+        </tr>
+        <tr>
+            <td>Wikipedia annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>wikipedia-annotations</code></td>
+        </tr>
+        <tr>
+            <td>Generell annotering</td>
+            <td>global</td>
+            <td><span class="badge rounded-pill text-bg-primary me-1">JSON-LD</span></td>
+            <td><code>generic-annotations</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>JSON-LD är FornPunkts primära format, andra format tillgängligörs för att främja användning men innehåller inte nödvändigtvis samma mängd information. Om du vill exportera mer än 5000 poster så behöver du ange en <code>page</code> parameter i URLen. Pagineringsinformation återfinns alltid i svarets <code>Link</code> HTTP header.</p>
+
+<h2>Exempel</h2>
+
+<p>Notera att båda parametrarna <code>scope</code> och <code>format</code> faller tillbka till lämpliga värden om man anger icke tillåtna sådana.</p>
+
+<p>Exportera alla lämningar som TSV:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/lamnings&scope=all&format=tsv</code></p>
+
+<p>Exportera kontoinformation för den aktuella användaren som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/accounts</code></p>
+
+<p>Exportera alla kommentarer som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/comments&scope=all</code></p>
+
+<p>Exportera generella annoteringar från 5001-10000 som JSON-LD:</p>
+
+<p><code>curl -H "Authorization: Token &lt;access_token&gt;" https://fornpunkt.se/apis/export/generic-annotations?page=2</code></p>
+""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/geo+json>, <https://www.iana.org/assignments/media-types/application/ld+json>, <https://www.iana.org/assignments/media-types/text/tab-separated-value> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-export-api/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-export-api/> ;
+  dct:relation :fornpunkt-json-ld-api .
+
+:fornpunkt-sitemaps a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt Sitemaps"@sv ;
+  dct:description "Index över information i FornPunkt som XML och text-sidkartor."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Alla resurser i FornPunkt exponeras som sidkartor i antingen TXT(sidor genererade ifrån kulturmiljöregisteret) eller som XML.</p>
+
+    <p>Denna tjänst är primärt avsedd för aggregatorer och sökmotorer men kan även användas för andra ändamål. Tjänsten innehåller inte bara information om FornPunkts primära innehåll utan listar också till exempel dokumentationssidor.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sitemaps/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sitemaps/> ;
+  dct:conformsTo <https://www.sitemaps.org/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/xml> .
+
+:fornpunkt-sparql a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt SPARQL"@sv ;
+  dct:description "SPARQL tjänst för FornPunkts data."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>FornPunkts SPARQL-tjänst innehåller all information som också exponeras genom de JSON-LD baserade tjänsterna och är avsedd för dataanalys och visualisering. Informationen i SPARQL-tjänsten uppdateras en gång i veckan och har inte lägre krav på upptider än FornPunkts övriga tjänster.</p>
+
+<p>Tjänsten har en svarstidsbegränsning satt till 20 sekunder.</p>
+
+<p>Följande RDF-klasser används i tjänsten: <code>schema:CreativeWork</code>, <code>schema:Event</code>, <code>schema:Place</code>, <code>schema:GeoCoordinates</code>, <code>schema:GeoShape</code>, <code>schema:DefinedTerm</code>, <code>oa:Annotation</code> och <code>rdfs:Class</code>.</p>
+
+<h2>Visualiseringsgränssnitt</h2>
+
+<p>FornPunkts SPARQL-tjänst har ett gränssnitt med exempel och visualiseringsfunktioner på <a href="https://sparql.fornpunkt.se">sparql.fornpunkt.se</a>.</p>""" ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql/> ;
+  dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> ;
+  void:sparqlEndpoint <https://sparql.fornpunkt.se/query> ;
+  dct:relation :fornpunkt-json-ld-api .
+
+:microdata a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Microdata"@sv ;
+  dct:description "Tillgång till data i FornPunkt genom Microdata."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Data om FornPunkt-lämningar, KMR-lämningar och taggar exponeras som inbäddad Microdata (<a href="https://schema.org">Schema.org</a>). Det är rekommenderat att du använder Microdata gränssnittet om du skrapar FornPunkt då detta gränssnitt är stabilt tillskillnad ifrån FornPunkts generella HTML-uppmärkning.</p>
+    
+    <p>Vi strävar efter att exponera så mycket information som möjligt som Microdata men det är inte alltid vi kan exponera all information. Är detta viktigt för dig bör du överväga att istället konsumera JSON-LD.</p>""" ;
+  ] ;
+  void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
+  void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
+  void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dcat:landingPage <https://fornpunkt.se/data/microdata/> ;
+  dcat:accessURL <https://fornpunkt.se/data/microdata/> ;
+  dct:conformsTo <https://html.spec.whatwg.org/multipage/microdata.html> .
+
+:datakatalog a dcat:Distribution ;
+  dct:type <http://schema.org/DataDownload> ;
+  dct:title "FornPunkt datakatalog"@sv ;
+  dct:description "Datamängd som beskriver datamängder och API-tjänster som är en del av FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>FornPunkts datakatalog beskriver API-tjänster och och nerladdningspaket som RDF. Detta dataset används primärt för som källa till FornPunkts dataportal och förvaltas öppet på <a href="https://github.com/fornpunkt/open-data">Github</a>.</p>
+    
+    <p>Datamängden beskriver primärt informationen i form av <a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT</a> men även <a href="https://www.w3.org/TR/vocab-dcat-3/">Schema.org</a> och <a href="https://www.w3.org/TR/Content-in-RDF10/">CNT</a>. För auktoriteter används primärt <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/access-right">Access right</a> (Europeiska unionens publikationsbyrå), <a href="https://wiki.creativecommons.org/wiki/License_Properties">Creative Commons</a> och <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">IANA</a>.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+  dcat:landingPage <https://fornpunkt.se/data/datakatalog/> ;
+  dcat:accessURL <https://fornpunkt.se/data/datakatalog/> ;
+  dcat:downloadURL <https://fornpunkt.se/datasets> .
+
+:fornpunkt-registrering a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "FornPunkt registrerings API (kommer snart)"@sv ;
+  dct:description "API för att registrera information i FornPunkt."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med FornPunkts registrerings API kan du registrera nya lämningar, taggar och kommentarer. Det är än inte möjligt att redigera existerande information med tjänsten.</p>
+    <p>Registrerings APIet testas fortfarande och du kan anmäla ditt intresse genom att skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a>.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/fornpunkt-registrering/> ;
+  dcat:accessURL <https://fornpunkt.se/data/fornpunkt-registrering/> .
+
+:geonames-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "GeoNames reconciliation API"@sv ;
+  dct:description "API för att matcha platser mot GeoNames i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med FornPunkts GeoNames reconciliation API kan du matcha platser i fritext mot GeoNames auktoriteter i verktyget <a href="https://openrefine.org/">OpenRefine</a>.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar.</p>
+
+    <pre><code>https://fornpunkt.se/apis/reconciliation/geonames</code></pre>
+
+    <p>Om du är ny till OpenRefine rekommenderas det att du läser deras <a href="https://openrefine.org/docs/manual/reconciling#getting-started">"Kom igång med reconciliation" dokumentation</a>.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/geonames-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/geonames-reconciliation/> ;
+  dct:relation :wikipedia-reconciliation ;
+  dct:relation :kmr-reconciliation .
+
+:kmr-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Kulturmiljöregistret reconciliation API"@sv ;
+  dct:description "API för att matcha kulturlämningar mot Kulturmiljöregistret i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """<p>Med FornPunkts reconciliation API för Kulturmiljöregistret kan du matcha kulturlämningsidentifierare mot Kulturmiljöregistrets UUIDn i verktyget <a href="https://openrefine.org/">OpenRefine</a>. Tjänsten kan matcha många olika typer av identifierare så som kulturarvdata-URIer, Lämningsnummer och FMIS-nummer.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar.</p>
+
+    <pre><code>https://fornpunkt.se/apis/reconciliation/kmr</code></pre>
+
+    <p>Om du är ny till OpenRefine rekommenderas det att du läser deras <a href="https://openrefine.org/docs/manual/reconciling#getting-started">"Kom igång med reconciliation" dokumentation</a>.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/kmr-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/kmr-reconciliation/> ;
+  dct:relation :wikipedia-reconciliation ;
+  dct:relation :geonames-reconciliation .
+
+:wikipedia-reconciliation a dcat:Distribution ;
+  dct:type <http://schema.org/WebAPI> ;
+  dct:title "Wikipedia reconciliation API"@sv ;
+  dct:description "API för att matcha fritext och identifierare mot Wikipedia i OpenRefine."@sv ;
+  schema:subjectOf [
+    a cnt:ContentAsText ;
+    cnt:chars """Med FornPunkts reconciliation API för Wikipedia kan du matcha fritext och Wikipedia URIer i verktyget <a href="https://openrefine.org/">OpenRefine</a>.</p>
+
+    <p>Tjänsten stödjer grundläggande reconciliation och förhandsvisningar av matchningar. Tjänsten är inte publik men fri att använda för alla som avser att använda den för att berika kulturmiljöinformation. Skicka en e-post till <a href="mailto:hej@fornpunkt.se">hej@fornpunkt.se</a> och beskriv ditt projekt för att få tillgång.</p>""" ;
+  ] ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:conformsTo <https://reconciliation-api.github.io/specs/0.2/> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/json> ;
+  dcat:landingPage <https://fornpunkt.se/data/wikipedia-reconciliation/> ;
+  dcat:accessURL <https://fornpunkt.se/data/wikipedia-reconciliation/> ;
+  dct:relation :geonames-reconciliation ;
+  dct:relation :kmr-reconciliation .
+
+<https://www.w3.org/TR/vocab-dcat-3/>
+  a dct:Standard ;
+  dct:title "DCAT"@sv .
+
+<https://schema.org/>
+  a dct:Standard ;
+  dct:title "Schema.org"@sv .
+
+<https://www.sitemaps.org/>
+  a dct:Standard ;
+  dct:title "Sitemaps"@sv .
+
+<https://www.rssboard.org/rss-specification>
+  a dct:Standard ;
+  dct:title "RSS"@sv .
+
+<https://www.w3.org/TR/sparql11-protocol/>
+  a dct:Standard ;
+  dct:title "SPARQL"@sv .
+
+<https://linkeddatafragments.org/specification/triple-pattern-fragments/>
+  a dct:Standard ;
+  dct:title "Triple Pattern Fragments"@sv .
+
+<https://html.spec.whatwg.org/multipage/microdata.html>
+  a dct:Standard ;
+  dct:title "Microdata"@sv .
+
+<https://reconciliation-api.github.io/specs/0.2/>
+  a dct:Standard ;
+  dct:title "Entity reconciliation API"@en .
+
+<https://www.indexnow.org/>
+  a dct:Standard ;
+  dct:title "IndexNow"@sv .
+
+<https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>
+  a dct:Standard ;
+  dct:title "TMS"@sv .
+
+<https://www.ogc.org/standards/wms>
+  a dct:Standard ;
+  dct:title "WMS"@sv .
+
+<https://www.iana.org/assignments/media-types/text/tab-separated-values>
+  a dct:Format ;
+  dct:title "TSV"@sv .
+
+<https://www.iana.org/assignments/media-types/application/json>
+  a dct:Format ;
+  dct:title "JSON"@sv .
+
+<https://www.iana.org/assignments/media-types/application/ld+json>
+  a dct:Format ;
+  dct:title "JSON-LD"@sv .
+
+<https://www.iana.org/assignments/media-types/application/geo+json>
+  a dct:Format ;
+  dct:title "GeoJSON"@sv .
+
+<https://www.iana.org/assignments/media-types/text/turtle>
+  a dct:Format ;
+  dct:title "Turtle"@sv .
+
+<https://www.iana.org/assignments/media-types/application/xml>
+  a dct:Format ;
+  dct:title "XML"@sv .
