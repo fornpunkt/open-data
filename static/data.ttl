@@ -286,7 +286,7 @@
   void:exampleResource <https://fornpunkt.se/lamning/PN2ooL9>, <https://fornpunkt.se/observationstyper>, <https://fornpunkt.se/tagg/stensattning> ;
   void:vocabulary <https://fornpunkt.se/observationstyper>, <http://schema.org/>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/oa>, <http://purl.org/dc/terms/>, <http://www.w3.org/ns/activitystreams> ;
   void:uriRegexPattern "^https:\\/\\/fornpunkt\\.se\\/(lamning\\/(\\w|\\d)+($|#\\w+-\\d+$)|tagg\\/(\\w|\\d|_)+$|observationstyper$)" ;
-  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> ;
+  dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:landingPage <https://fornpunkt.se/data/fornpunkt-sparql/> ;
   dcat:accessURL <https://fornpunkt.se/data/fornpunkt-sparql/> ;
   dct:conformsTo <https://www.w3.org/TR/sparql11-protocol/> ;
